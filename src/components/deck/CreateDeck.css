@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.create-form  {
+  margin: 30px;
+  margin-top: 70px;
+}
+
+.title, .term, .definition{
+  width: 450px;
+  /* height: 50px; */
+  border: none;
+  border-bottom: 3px solid #7C7F7F;
+  font-size: 20px;
+}
+
+.add-card {
+  width: 120px;
+  border-bottom: 3px solid #5C5B5C;
+
+}
+
+.term, .definition {
+  background-color: #E5E4E5;
+}
+
+.title-text {
+  font-size: 20px;
+}
+
+.visibility-box {
+  float: right;
+}
+
+.deck-item {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  background-color:#E5E4E5;
+}
+
+.definition-container {
+  float: right;
+}
+
+p {
+  font-size: 24px;
+}
+
+.deck-item button {
+  margin-top: 30px;
+  height: 50px;
+  width: 200px;
+  border: none;
+  font-size: 20px;
+  background-color: #E5E4E5;
+  float: right;
+}
