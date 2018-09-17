@@ -1,5 +1,12 @@
- language: node_js
- node_js: node
- cache:
-   directories:
-     - node_modules
+language: node_js
+node_js: node
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: ix0kHiMebcaB9z2mPnczFDlpQpXMamrtdjOzF4It1aa54kiFdVQg7VGrK/dx9S8fkv6pRHsJrOm8sx6F/G5ad2bo+ZOa31a7qt1NqHdw+uKHmWa7s/I32C9roR2k10CcHoSKIdGIGzXmjuBzF6xhwGhWqiGhkbthbIhDCWoIoi5S/WI84rwnC5VCB4Z/lp1pMcwL1i5KE6sgJNtB3U4GahGhJyVYTi+/DpWYraQ9qK+rySTyv60ntZiKtt+Lj50TmK8aFI8pqOQJZWfNVgio7fniiuwcQ3FjYYY4QqjBIDoa7W0MQAEjWYH+OnX/jkp1HLvGIl0u9zRjW/55P9sMiX8EFMVNKwu8cseslXHOl21qfStty6zjQqRoJb5P2fetv02vlCfocgbsFWk6hVBNoc/NcFfFSDiweEOnmpOzCnujMZKIAR2EnVngBy4lZTR8uiRrYB6LNvlDiVxN92u+x4mLAtKS7GqMakp0mnNQKJjVowQEGntUD7fzw1V/UjI8a5AdHU8bdEXTk377mRYOUezqxs07RB78KyS5EhU/ngOdBQO/xeSqszlPxBDd8tcl+aXzh287AKLhjAXkBePtOs1xnntJOSey93VOEqzWIlBqc5A9JViLzh5hi6RH0J+TkuX0jmk20BpXsvltoFyVP5sYKi5KI2xtLo8zDlpIL0k=
+  app: enigmatic-everglades-87317
+  on:
+    repo: eswoodard/flashdeck-client
