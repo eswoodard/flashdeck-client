@@ -1,7 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background-color: #BABEBF;
   height: 100%;
+}
+
+main {
+  background-color: #FFFEFF;
+  width: 95%;
+  max-width: 1600px;
+  margin: 0 auto;
+  height: 100%;
+  overflow: scroll;
+  padding-top: 75px;
 }

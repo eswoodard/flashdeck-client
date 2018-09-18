@@ -3,9 +3,9 @@ import './SignUp.css';
 
 const SignUp = () =>  {
     return (
-      <div class="modal-container">
-          <div class="modal login">
-            <form>
+      <div className="modal-container">
+          <div className="modal-signup">
+            <form className="signup-form">
               <a href="#">X</a>
               <h3>Create Account</h3>
               <label>Name</label>

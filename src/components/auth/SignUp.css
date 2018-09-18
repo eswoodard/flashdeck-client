@@ -1,4 +1,4 @@
-.modal {
+.modal-signup {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,18 +11,18 @@
   position: relative;
 }
 
-form {
+.signup-form {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
 }
 
-label {
+.signup-form label {
   padding: 5px;
 }
 
-input {
+.signup-form input {
   width: 250px;
   height: 30px;
   margin-bottom: 5px;
@@ -32,7 +32,7 @@ input {
   margin-top: 15%;
 }
 
-form a {
+.signup-form a {
   position: absolute;
   top: 2px;
   right: 8px;
@@ -40,7 +40,7 @@ form a {
   color: rgb(56, 53, 53)
 }
 
-button {
+.signup-form button {
   margin-top: 25px;
   padding: 5px;
   width: 150px;

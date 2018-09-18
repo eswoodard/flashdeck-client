@@ -1,24 +1,18 @@
-main {
-  background-color: #FFFEFF;
-  width: 95%;
-  max-width: 1600px;
-  margin: 0 auto;
-  height: 100%;
-  overflow: scroll;
-  padding-top: 75px;
-}
 
-header {
-  text-align: center;
+
+.lp-header{
+  display: flex;
+  flex-direction: column;
   padding: 20px;
+  align-items: center;
 }
 
-h2 {
+.lp-header h2 {
   padding-top: 150px;
 
 }
 
-button {
+.lp-btn {
   margin-top: 75px;
   padding: 10px;
   width: 150px;
@@ -43,11 +37,11 @@ section {
   text-align: center;
 }
 
-h3 {
+.lp-section h3 {
   font-size: 30px;
 }
 
-p {
+.lp-section p {
   font-size: 20px;
 }
 

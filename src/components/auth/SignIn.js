@@ -4,8 +4,8 @@ import './SignIn.css';
 const SignIn = () =>  {
     return (
       <div className="modal-container">
-        <div className="modal login">
-         <form>
+        <div className="modal-login">
+         <form className="sign-in">
             <a href="#">X</a>
             <h3>Login</h3>
             <label>User Name</label>

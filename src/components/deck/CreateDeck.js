@@ -5,26 +5,26 @@ import './CreateDeck.css';
 const CreateDeck = () =>  {
     return (
       <div className="create-flashdeck">
-      <h2>Create a new FlashDeck</h2>
-      <form className="create-form" autoComplete="off">
-        <div className="deck-info">
-          <input
-            className="title"
-            name="title"
-            type="text"
-            placeholder="Subject"
-            />
-            <br></br>
-          <label className="title-text">Deck Title</label>
-          <div className="visibility-box">
+        <h2>Create a new FlashDeck</h2>
+        <form className="create-form" autoComplete="off">
+          <div className="deck-info">
             <input
-              name="visibility"
-              type="checkbox"
-              id="visibility"
-              value="visibility"
-              defaultChecked
+              className="title"
+              name="title"
+              type="text"
+              placeholder="Subject"
               />
-            <label htmlFor="visibility">Visible to Everyone</label>
+              <br></br>
+            <label className="title-text">Deck Title</label>
+            <div className="visibility-box">
+              <input
+                name="visibility"
+                type="checkbox"
+                id="visibility"
+                value="visibility"
+                defaultChecked
+                />
+              <label htmlFor="visibility">Visible to Everyone</label>
           </div>
         </div>
         <div className="deck-item">
@@ -79,7 +79,7 @@ const CreateDeck = () =>  {
                   value="+ Add Card"/>
                 </div>
               </div>
-              <button>Create</button>
+              <button className="create-card-btn bottom">Create</button>
       </form>
       </div>
 

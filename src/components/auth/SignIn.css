@@ -1,5 +1,5 @@
 
-.modal {
+.modal-login {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,18 +13,18 @@
   position: relative;
 }
 
-form {
+.sign-in {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
 }
 
-label {
+.sign-in label {
   padding: 5px;
 }
 
-input {
+.sign-in input {
   width: 250px;
   height: 30px;
 }
@@ -33,15 +33,14 @@ input {
   margin-top: 15%;
 }
 
-form a {
+.sign-in a {
   position: absolute;
   top: 2px;
   right: 8px;
   text-decoration: none;
   color: rgb(56, 53, 53)
 }
-
-button {
+.sign-in button {
   margin-top: 25px;
   padding: 5px;
   width: 150px;

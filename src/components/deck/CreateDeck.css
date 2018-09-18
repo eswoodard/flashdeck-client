@@ -1,8 +1,6 @@
-* {
-  box-sizing: border-box;
-}
 
-h2 {
+
+.create-flashdeck h2 {
   text-align: center;
   padding-top: 30px;
 }
@@ -56,7 +54,7 @@ p {
   font-size: 24px;
 }
 
-.deck-item button {
+.create-card-btn {
   margin-top: 30px;
   height: 50px;
   width: 200px;

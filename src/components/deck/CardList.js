@@ -12,7 +12,7 @@ const CardList = () =>  {
                 <option value="starred">Starred</option>
             </select>
             </div>
-            <div className="deck-item">
+            <div className="deck-card">
               <p className="card-number">1</p>
               <div className="term-container">
                 <p>quisque</p>
@@ -21,7 +21,7 @@ const CardList = () =>  {
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus urna neque viverra justo nec ultrices dui sapien eget</p>
               </div>
             </div>
-            <div className="button-container">
+            <div className="quiz-button-container">
               <button className="edit-btn">Edit Deck</button>
             </div>
        </div>

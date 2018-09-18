@@ -5,16 +5,6 @@ i {
   padding: 3px;
 }
 
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-
-.left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-}
-
 .hr1 {
   display: block;
   height: 1px;
@@ -39,6 +29,10 @@ i {
 
 .vertical2 {
   height: 55px;
+}
+
+.arrow {
+  border: none;
 }
 
 h2 {
@@ -71,21 +65,30 @@ header p {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  /* text-align: center; */
-  justify-content: center;
   align-items: center;
-  /* padding-bottom: 25px; */
-  margin-bottom: 25px;
   background-color: #BFBEBF;
   }
 
-.star {
-  /* float: right; */
-  padding-right: 15px;
+.card-back {
+  justify-content: center;
+  text-align: center;
+
+}
+
+.icon-container {
   align-self: flex-end
 }
 
-.term {
+.icon {
+  /* align-self: flex-end; */
+  padding-right: 10px;
+  /* padding-left: 10px; */
+  padding-top: 10px;
+  border: none;
+}
+
+
+.card-term p{
   /* text-align: center; */
   /* position: relative; */
   padding-top: 55px;
@@ -109,7 +112,7 @@ header p {
   padding-right: 20px;
 }
 
-.button-container {
+.quiz-button-container {
   /* display: flex;
   justify-content: center; */
   margin-top: 20px;
@@ -163,7 +166,7 @@ footer p {
   margin-bottom: 50px;
 }
 
-.deck-item {
+.deck-card {
   display: flex;
   justify-content: space-around;
   background-color: #BFBEBF;
@@ -184,4 +187,46 @@ footer p {
 .button-container {
   text-align: center;
 }
+
+
+.card-container div.card-back {
+  transform: rotateY(90deg);
+}
+
+.card-container div.card-front {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.card-container:hover div.card-front {
+  animation: twirl 0.2s ease-in forwards;
+}
+
+.card-container:hover div.card-back {
+  animation: twirl 0.2s 0.2s ease-out forwards reverse;
+}
+
+.card-container:after div.card-front {
+  animation: twirl 0.2s ease-in forwards;
+}
+
+.card-container:after div.card-back {
+  animation: twirl 0.2s 0.2s ease-out forwards reverse;
+}
+
+
+@keyframes twirl {
+  0% {
+    transform: rotateY(0deg)
+  }
+  100%{
+    transform: rotateY(90deg)
+  }
+}
+
+
+
+
 
