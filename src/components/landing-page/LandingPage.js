@@ -1,12 +1,13 @@
 import React from 'react';
 import './LandingPage.css';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () =>  {
     return (
       <div className="landing-page">
       <header className="lp-header">
           <h2>Create, discover, and share flashdecks to help you learn faster, smarter, and more efficiently.</h2>
-          <button className="lp-btn">Start Now</button>
+          <Link to='/signup' className="lp-btn">Start Now</Link>
         </header>
         <hr/>
         <section className="lp-section">
@@ -24,9 +25,9 @@ const LandingPage = () =>  {
           <p>Help others learn by sharing your decks with the community.</p>
         </section>
         <hr/>
-        <section className="lp-section">
+        <section className="lp-section last">
           <h3>What do you want to learn?</h3>
-          <button className="bottom lp-btn">Get Started</button>
+          <Link to='/signup' className="lp-btn">Get Started</Link>
         </section>
       </div>
 

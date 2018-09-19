@@ -8,6 +8,7 @@ import SignUp from './auth/SignUp';
 import Dashboard from './dashboard/Dashboard';
 import CreateDeck from './deck/CreateDeck';
 import Deck from './deck/Deck';
+import Quiz from './quiz/Quiz';
 
 import './App.css';
 
@@ -27,6 +28,7 @@ class App extends Component {
             <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/create-deck' component={CreateDeck} />
             <Route exact path='/deck/:id' component={Deck} />
+            <Route exact path='quiz/:id' component={Quiz} />
 
 
 

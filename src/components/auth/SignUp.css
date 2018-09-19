@@ -32,7 +32,7 @@
   margin-top: 15%;
 }
 
-.signup-form a {
+.x-out {
   position: absolute;
   top: 2px;
   right: 8px;
@@ -45,4 +45,9 @@
   padding: 5px;
   width: 150px;
   font-size: 16px;
+}
+
+.signup-form p {
+  font-size: 14px;
+  padding-top: 10px;
 }
