@@ -9,7 +9,8 @@ export class Dashboard extends React.Component {
   render() {
     console.log(this.props.decks);
     const decks = this.props.decks.map((deck, index) => {
-      console.log(deck.cards.length);
+      console.log(deck.cards.length, deck.username, deck.title);
+
         <div className="flashdeck-summary-container" key={index}>
           <p className="summary-item">{deck.cards.length} cards</p>
           <div className="vertical"></div>
