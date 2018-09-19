@@ -23,3 +23,11 @@ main {
   overflow: scroll;
   padding-top: 75px;
 }
+
+div#root {
+  height: 100%;
+}
+
+.app {
+  height: 100%;
+}

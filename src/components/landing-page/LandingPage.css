@@ -18,6 +18,10 @@
   width: 150px;
   height: 40px;
   font-size: 18px;
+  text-decoration: none;
+  background-color: #BABEBF;
+  color: black;
+  text-align: center;
 }
 
 hr {
@@ -45,7 +49,10 @@ section {
   font-size: 20px;
 }
 
-.bottom {
-  margin-top: 20px;
-  margin-bottom:75px;
+.landing-page {
+  margin-bottom: 75px;
+}
+
+.last {
+  margin-bottom: 75px;
 }
