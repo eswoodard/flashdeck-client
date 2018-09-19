@@ -27,8 +27,8 @@ class App extends Component {
             <Route exact path='/signup' component={SignUp} />
             <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/create-deck' component={CreateDeck} />
-            <Route exact path='/deck/:id' component={Deck} />
-            <Route exact path='quiz/:id' component={Quiz} />
+            <Route path='/deck/:id' component={Deck} />
+            <Route path='quiz/:id' component={Quiz} />
 
 
 
