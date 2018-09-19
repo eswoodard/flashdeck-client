@@ -1,37 +1,28 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import './Dashboard.css';
+import DeckPortal from './DeckPortal';
 
 
 
 export class Dashboard extends React.Component {
 
   render() {
-    console.log(this.props.decks);
-    const decks = this.props.decks.map((deck, index) => {
-      console.log(deck.cards.length, deck.username, deck.title);
-
-        <div className="flashdeck-summary-container" key={index}>
-          <p className="summary-item">{deck.cards.length} cards</p>
-          <div className="vertical"></div>
-          <p className="summary-item">By: {deck.username}</p>
-          <div className="break"></div>
-          <p className="topic">{deck.title}</p>
-          <div className="button-container">
-            <button>Study</button>
-            <div className="vertical vertical2"></div>
-            <button>Take Quiz</button>
-          </div>
-        </div>
+    console.log(this.props);
+    const userDecks = this.props.decks.filter((deck) => deck.username === 'username1');
+    console.log(userDecks);
+    const userDeckPortals = userDecks.map((deck, index) => {
+      return (
+        <DeckPortal deck={deck} key={index}/>
+      )
     })
-    console.log(decks);
 
     return (
       <div className="flashdecks">
         <div className="user-flashdecks">
           <h2>Your FlashDecks</h2>
           <div className="flashdeck container">
-            {decks}
+            {userDeckPortals}
           </div>
             <div className="break"></div>
               <div className="dashboard-btn-container">
@@ -51,10 +42,6 @@ export class Dashboard extends React.Component {
   }
 }
 
-Dashboard.defaultProps = {
-  username: 'username',
-  title: 'title',
-};
 
 const mapStateToProps = state => ({
   decks: state.decks
