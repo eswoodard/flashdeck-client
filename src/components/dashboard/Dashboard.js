@@ -8,7 +8,7 @@ import DeckPortal from './DeckPortal';
 export class Dashboard extends React.Component {
 
   render() {
-    console.log(this.props);
+    console.log();
     const userDecks = this.props.decks.filter((deck) => deck.username === 'username2');
     // console.log(userDecks);
     const userDeckPortals = userDecks.map((deck, index) => {
@@ -44,7 +44,7 @@ export class Dashboard extends React.Component {
 
 
 const mapStateToProps = state => ({
-  decks: state.decks
+  decks: state.flashDecks.decks
 });
 
 export default connect(mapStateToProps)(Dashboard);

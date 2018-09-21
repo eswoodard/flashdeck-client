@@ -10,7 +10,7 @@
   margin-top: 70px;
 }
 
-.title, .term, .definition{
+.form-input {
   width: 450px;
   /* height: 50px; */
   border: none;
@@ -18,15 +18,25 @@
   font-size: 20px;
 }
 
+.title, .term, .definition {
+  border: none;
+  width: 450px;
+  font-size: 24px;
+  background-color: #E5E4E5;
+
+}
+
+.title {
+  background-color: white;
+}
+
 .add-card {
   width: 120px;
   border-bottom: 3px solid #5C5B5C;
-
-}
-
-.term, .definition {
   background-color: #E5E4E5;
+
 }
+
 
 .title-text {
   font-size: 20px;
@@ -38,12 +48,15 @@
 
 .deck-item {
   margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   padding: 30px;
   background-color:#E5E4E5;
+  max-width: 1200px;
 }
 
 .definition-container {

@@ -2,6 +2,9 @@ import React from 'react';
 import {reduxForm, Field} from 'redux-form';
 import './CreateDeckForm.css';
 import CreateDeckFormInputs from './CreateDeckFormInputs';
+import Input from '../input/input';
+import {required, nonEmpty} from '../input/validators';
+
 
 
 export class CreateDeckForm extends React.Component {
@@ -13,13 +16,13 @@ export class CreateDeckForm extends React.Component {
     return (
       <div className="create-flashdeck">
         <h2>Create a new FlashDeck</h2>
-        <form className="create-form" autoComplete="off">
+        <form className="create-form" autoComplete="off" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           <div className="deck-info">
-            <input
+            <Field
               className="title"
               name="title"
-              id="title"
-              component="input"
+              component={Input}
+              validate={[required, nonEmpty]}
               type="text"
               placeholder="Subject"
               />
@@ -27,17 +30,21 @@ export class CreateDeckForm extends React.Component {
             <label htmlFor="title" className="title-text">Deck Title</label>
         </div>
         <CreateDeckFormInputs/>
-        <CreateDeckFormInputs/>
         <div className="deck-item">
           <div className="term-container">
-            <input className="term add-card"
+            <button className="add-card"
             type="submit"
-            aria-label="term" placeholder="Enter Term"
-            name="term"
-            value="+ Add Card"/>
+            >+Add Card</button>
           </div>
         </div>
-        <button className="create-card-btn bottom">Create</button>
+        <button
+          type="submit"
+          className="create-card-btn bottom"
+          disabled={
+            this.props.pristine || this.props.submitting
+          }>
+          Create
+        </button>
       </form>
       </div>
 
@@ -49,4 +56,3 @@ export default reduxForm({
   form: 'create-deck-form'
 })(CreateDeckForm);
 
-// onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}

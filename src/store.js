@@ -6,7 +6,7 @@ import {flashDeckReducer} from './reducers';
 export default createStore(
   combineReducers({
     form: formReducer,
-    flashDeck: flashDeckReducer
+    flashDecks: flashDeckReducer
   })
 );
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import {reduxForm, Field} from 'redux-form';
+import Input from '../input/input';
+import {required, nonEmpty} from '../input/validators';
 
 
 
@@ -13,11 +15,11 @@ export default class CreateDeckFormInputs extends React.Component {
         <div className="deck-item">
           <p>1</p>
           <div className="term-container">
-            <input
+            <Field
               className="term"
               name="term"
-              id="term"
-              component="input"
+              component={Input}
+              validate={[required, nonEmpty]}
               type="text"
               aria-label="term"
               placeholder="Enter Term" name="term"/>
@@ -26,12 +28,12 @@ export default class CreateDeckFormInputs extends React.Component {
               htmlFor="term" className="title-text">Term</label>
           </div>
           <div className="definition-container">
-            <input
+            <Field
               className="definition"
               name="definition"
-              id="definition"
-              component="input"
-              type="text"
+              component={Input}
+              validate={[required, nonEmpty]}
+              type="textarea"
               aria-label="definition" placeholder="Enter Definition" name="definition"
               />
               <br></br>
