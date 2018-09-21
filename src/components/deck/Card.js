@@ -1,8 +1,15 @@
 import React from 'react';
+import ReactCardFlip from 'react-card-flip';
 
 
 
-const Card = () =>  {
+const Card = (props) =>  {
+
+  function handleClick(e) {
+    e.preventDefault();
+
+  }
+
     return (
       <div className="card-container">
         <div className="card">
@@ -14,11 +21,11 @@ const Card = () =>  {
                 crop_free</i>
             </div>
             <div className="card-term">
-              <p>quisque</p>
+              <p>{props.term}</p>
             </div>
           </div>
           <div className="card-back side">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus urna neque viverra justo nec ultrices dui sapien eget.</p>
+            <p>{props.definition}</p>
           </div>
          </div>
       </div>

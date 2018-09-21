@@ -189,18 +189,18 @@ footer p {
 }
 
 
-.card-container div.card-back {
+/* .card-container div.card-back {
   transform: rotateY(90deg);
-}
+} */
 
-.card-container div.card-front {
+/* .card-container div.card-front {
   position: absolute;
   left: 0;
   right: 0;
   margin: auto;
-}
+} */
 
-.card-container:hover div.card-front {
+/* .card-container:hover div.card-front {
   animation: twirl 0.2s ease-in forwards;
 }
 
@@ -224,7 +224,7 @@ footer p {
   100%{
     transform: rotateY(90deg)
   }
-}
+} */
 
 
 

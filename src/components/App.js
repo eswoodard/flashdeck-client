@@ -6,7 +6,7 @@ import Footer from './layout/Footer';
 import SignIn from './auth/SignIn';
 import SignUp from './auth/SignUp';
 import Dashboard from './dashboard/Dashboard';
-import CreateDeck from './deck/CreateDeck';
+import CreateDeckForm from './deck/CreateDeckForm';
 import Deck from './deck/Deck';
 import Quiz from './quiz/Quiz';
 
@@ -26,7 +26,7 @@ class App extends Component {
             <Route exact path='/signin' component={SignIn} />
             <Route exact path='/signup' component={SignUp} />
             <Route exact path='/dashboard' component={Dashboard} />
-            <Route exact path='/create-deck' component={CreateDeck} />
+            <Route exact path='/create-deck' component={CreateDeckForm} />
             <Route path='/deck/:id' component={Deck} />
             <Route path='quiz/:id' component={Quiz} />
 
