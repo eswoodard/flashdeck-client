@@ -1,35 +1,29 @@
 import React from 'react';
-import ReactCardFlip from 'react-card-flip';
+// import ReactCardFlip from 'react-card-flip';
 
 
 
 const Card = (props) =>  {
-
-  function handleClick(e) {
-    e.preventDefault();
-
-  }
-
-    return (
-      <div className="card-container">
-        <div className="card">
-          <div className="card-front side">
-            <div className="icon-container">
-            <i className="material-icons icon">star_border
-            </i>
-            <i className="material-icons icon">
-                crop_free</i>
-            </div>
-            <div className="card-term">
-              <p>{props.term}</p>
-            </div>
+  return (
+    <div className="card-container">
+      <div className="card">
+        <div className="card-front side">
+          <div className="icon-container">
+          <i className="material-icons icon">star_border
+          </i>
+          <i className="material-icons icon">
+              crop_free</i>
           </div>
-          <div className="card-back side">
-            <p>{props.definition}</p>
+          <div className="card-term">
+            <p>{props.term}</p>
           </div>
-         </div>
-      </div>
-    )
+        </div>
+        <div className="card-back side">
+          <p>{props.definition}</p>
+        </div>
+        </div>
+    </div>
+  )
 }
 
 export default Card;

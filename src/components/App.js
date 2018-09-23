@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Nav from './layout/Nav';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LandingPage from './landing-page/LandingPage';
 import Footer from './layout/Footer';
 import SignIn from './auth/SignIn';

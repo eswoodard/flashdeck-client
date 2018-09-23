@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 const DeckNavigation = (props) =>  {
     return (
        <div className="deck-navigation">

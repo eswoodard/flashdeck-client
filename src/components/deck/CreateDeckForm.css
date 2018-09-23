@@ -3,15 +3,16 @@
 .create-flashdeck h2 {
   text-align: center;
   padding-top: 30px;
+  font-size:20px;
 }
 
 .create-form  {
   margin: 30px;
-  margin-top: 70px;
+  margin-top: 30px;
 }
 
 .form-input {
-  width: 450px;
+  width: 250px;
   /* height: 50px; */
   border: none;
   border-bottom: 3px solid #7C7F7F;
@@ -20,8 +21,8 @@
 
 .title, .term, .definition {
   border: none;
-  width: 450px;
-  font-size: 24px;
+  width: 250px;
+  font-size: 20px;
   background-color: #E5E4E5;
 
 }
@@ -34,12 +35,16 @@
   width: 120px;
   border-bottom: 3px solid #5C5B5C;
   background-color: #E5E4E5;
+  font-size: 16px;
 
 }
 
+.deck-item p {
+  font-size: 16px;
+}
 
 .title-text {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .visibility-box {
@@ -75,4 +80,39 @@ p {
   font-size: 20px;
   background-color: #E5E4E5;
   float: right;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+
+  .create-flashdeck h2 {
+    font-size:30px;
+  }
+
+  .create-form  {
+    margin-top: 70px;
+  }
+
+  .form-input {
+    width: 450px;
+    /* height: 50px; */
+    border: none;
+    border-bottom: 3px solid #7C7F7F;
+    font-size: 20px;
+  }
+
+  .title-text {
+    font-size: 20px;
+  }
+
+  .title, .term, .definition {
+    width: 450px;
+    font-size: 24px;
+  }
+
+  .add-card {
+    font-size: 18px;
+  }
+
 }

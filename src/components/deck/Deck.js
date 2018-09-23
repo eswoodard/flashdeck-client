@@ -9,7 +9,9 @@ import {connect} from 'react-redux';
 export class Deck extends React.Component  {
 
   render() {
+    console.log(this.props);
     const deck = this.props.decks.filter((deck) => deck.id == this.props.match.params.id);
+    console.log(deck);
     const cards = deck[0].cards.map((card, index) =>
         <Card term={card.term} definition={card.definition} key={index} />
       );
@@ -29,7 +31,7 @@ export class Deck extends React.Component  {
         <DeckNavigation cardNumber={deck[0].cards.length}/>
         <div className="quiz-button-container">
               <p>Think you're ready?</p>
-              <button>Take Quiz</button>
+              <button className="take-quiz-btn">Take Quiz</button>
         </div>
         <hr className="hr1"/>
         <div className="card-list-container">
@@ -52,7 +54,7 @@ export class Deck extends React.Component  {
 }
 
 const mapStateToProps = state => ({
-  decks: state.decks
+  decks: state.flashDecks.decks
 });
 
 export default connect(mapStateToProps)(Deck);

@@ -39,7 +39,7 @@ export class CreateDeckForm extends React.Component {
         </div>
         <button
           type="submit"
-          className="create-card-btn bottom"
+          className="create-card-btn"
           disabled={
             this.props.pristine || this.props.submitting
           }>

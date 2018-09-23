@@ -7,7 +7,8 @@ nav {
   padding-right: 20px;
   position: fixed;
   width: 100%;
-  font-size: 20px;
+  font-size: 15px;
+  height: 80px;
 }
 
 .nav-links a, .logo a {
@@ -19,7 +20,7 @@ nav {
   padding: 20px;
   list-style: none;
   color: black;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .nav-links {
@@ -27,3 +28,16 @@ nav {
   margin-right: 20px;
 }
 
+
+
+@media (min-width: 768px) {
+
+  nav {
+    font-size: 20px;
+  }
+
+  .links {
+    font-size: 20px;
+  }
+
+}

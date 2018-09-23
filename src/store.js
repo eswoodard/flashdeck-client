@@ -9,5 +9,3 @@ export default createStore(
     flashDecks: flashDeckReducer
   })
 );
-
-// export default createStore(flashDeckReducer);
