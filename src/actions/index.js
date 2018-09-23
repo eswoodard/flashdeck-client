@@ -1,6 +1,7 @@
 export const ADD_DECK = 'ADD_DECK';
-export const addList = (username, title) => ({
+export const addList = (id, username, title) => ({
   type: ADD_DECK,
+  id,
   username,
   title
 });
@@ -12,3 +13,9 @@ export const addCard = (term, definition, deckIndex) => ({
   definition,
   deckIndex
 });
+
+export const FLIP_CARD = 'FLIP_CARD';
+export const flipCard = (isFlipped) => ({
+  type: FLIP_CARD,
+  isFlipped
+})

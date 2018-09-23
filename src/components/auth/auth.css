@@ -1,0 +1,107 @@
+
+.modal-login, .modal-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  max-width: 80%;
+  margin: 0 auto;
+  height: 400px;
+  background-color: #ccc;
+  position: relative;
+}
+
+.modal-signup {
+  height: 400px;
+}
+
+.sign-in, .signup-form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.sign-in label, .signup-form label {
+  padding: 5px;
+}
+
+/* .signup-form input {
+  width: 250px;
+  height: 30px;
+  margin-bottom: 5px;
+} */
+
+.modal-container {
+  margin-top: 25%;
+}
+
+.x-out {
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  text-decoration: none;
+  color: rgb(56, 53, 53)
+}
+.sign-in button, .signup-form button {
+  margin-top: 30px;
+  padding: 5px;
+  width: 150px;
+  font-size: 16px;
+}
+
+.sign-in p, .signup-form p {
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.sign-in-up-input {
+  background-color: #ccc;
+  border: none;
+  font-size: 16px;
+}
+
+.sign-in div.form-input {
+  width: 225px;
+  /* padding: 15px; */
+}
+
+.signup-form div.form-input {
+  width: 225px;
+
+}
+
+@media (min-width: 768px) {
+
+  .modal-container {
+    margin-top: 15%;
+  }
+
+  .modal-login, .modal-signup {
+    max-width: 450px;
+  }
+
+  .sign-in div.form-input {
+    width: 300px;
+  }
+
+  .signup-form div.form-input {
+    width: 300px;
+  }
+
+  .signup-form input {
+    width: 250px;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+
+  .sign-in-up-input {
+    font-size: 22px;
+  }
+
+  .modal-signup {
+    height: 600px;
+  }
+}

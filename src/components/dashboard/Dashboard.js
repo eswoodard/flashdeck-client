@@ -8,9 +8,9 @@ import DeckPortal from './DeckPortal';
 export class Dashboard extends React.Component {
 
   render() {
-    console.log(this.props);
-    const userDecks = this.props.decks.filter((deck) => deck.username === 'username1');
-    console.log(userDecks);
+    console.log();
+    const userDecks = this.props.decks.filter((deck) => deck.username === 'username2');
+    // console.log(userDecks);
     const userDeckPortals = userDecks.map((deck, index) => {
       return (
         <DeckPortal deck={deck} key={index}/>
@@ -26,7 +26,7 @@ export class Dashboard extends React.Component {
           </div>
             <div className="break"></div>
               <div className="dashboard-btn-container">
-                <button className="dashboard-btn">Create Deck</button><br/>
+                <button className="dashboard-btn" onClick= { () => this.props.history.push('/create-deck') }>Create Deck</button><br/>
                 <button className="dashboard-btn">See Quiz Scores</button>
               </div>
                 <hr className="hr1"/>
@@ -44,7 +44,7 @@ export class Dashboard extends React.Component {
 
 
 const mapStateToProps = state => ({
-  decks: state.decks
+  decks: state.flashDecks.decks
 });
 
 export default connect(mapStateToProps)(Dashboard);

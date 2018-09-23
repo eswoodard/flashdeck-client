@@ -35,32 +35,34 @@ i {
   border: none;
 }
 
-h2 {
+.study-deck h2 {
   text-align: center;
   padding-top: 30px;
+  font-size: 20px;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
+.study-deck header {
   padding-left: 25px;
   padding-right: 25px;
+  text-align: center;
 }
 
 header p {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .instructions {
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .card-front, .card-back {
   border: black solid 2px;
   margin: 30px;
   width: 70%;
-  height: 400px;
+  height: 150px;
   max-width: 800px;
   margin: 0 auto;
   display: flex;
@@ -91,15 +93,17 @@ header p {
 .card-term p{
   /* text-align: center; */
   /* position: relative; */
-  padding-top: 55px;
-  font-size: 60px;
-  height: 350px;
+  font-size: 20px;
+  height: 150px;
+}
+
+.card-back p {
+  font-size: 15px;
 }
 
 .card-back {
   padding-left: 30px;
   padding-right: 30px;
-  font-size: 40px;
 }
 
 .deck-navigation {
@@ -110,6 +114,11 @@ header p {
 .count {
   padding-left: 20px;
   padding-right: 20px;
+  font-size: 18px;
+}
+
+.quiz-button-container p {
+  font-size: 18px;
 }
 
 .quiz-button-container {
@@ -123,21 +132,20 @@ header p {
   font-size: 22px;
 }
 
-button {
+.take-quiz-btn {
   border: none;
-  font-size: 20px;
+  font-size: 16px;
   background-color: #BFBEBF;
   height: 40px;
   width: 150px;
   padding: 10px;
+  margin-top: 10px;
 }
 
 .deck-list-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .terms-container {
@@ -167,11 +175,13 @@ footer p {
 }
 
 .deck-card {
-  display: flex;
-  justify-content: space-around;
   background-color: #BFBEBF;
-  margin-right: 15%;
-  margin-left: 15%;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.deck-card p {
+  font-size: 18px;
 }
 
 .card-number {
@@ -189,18 +199,18 @@ footer p {
 }
 
 
-.card-container div.card-back {
+/* .card-container div.card-back {
   transform: rotateY(90deg);
-}
+} */
 
-.card-container div.card-front {
+/* .card-container div.card-front {
   position: absolute;
   left: 0;
   right: 0;
   margin: auto;
-}
+} */
 
-.card-container:hover div.card-front {
+/* .card-container:hover div.card-front {
   animation: twirl 0.2s ease-in forwards;
 }
 
@@ -224,9 +234,72 @@ footer p {
   100%{
     transform: rotateY(90deg)
   }
+} */
+
+@media (min-width: 768px) {
+
+  .study-deck h2 {
+    font-size: 30px;
+  }
+
+  .study-deck header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  header p {
+    font-size: 20px;
+  }
+
+  .instructions {
+    font-size: 22px;
+  }
+
+  .card-front, .card-back {
+    height: 400px;
+    }
+
+  .card-term p{
+    padding-top: 55px;
+    font-size: 60px;
+    height: 350px;
+  }
+
+  .card-back p {
+    font-size: 24px;
+  }
+
+  .count, .quiz-button-container p {
+    font-size: 24px;
+  }
+
+  .take-quiz-btn {
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .deck-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+
+  .deck-card {
+    display: flex;
+    justify-content: space-around;
+    background-color: #BFBEBF;
+    margin-right: 15%;
+    margin-left: 15%;
+  }
+
+  .deck-card p {
+    font-size: 24px;
+  }
 }
-
-
 
 
 
