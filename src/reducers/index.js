@@ -60,11 +60,6 @@ export const flashDeckReducer = (state=initialState, action) => {
       decks
     });
   }
-  else if (action.type === actions.FLIP_CARD) {
-    return Object.assign({}, state, {
-      isFlipped: false,
-    })
-  }
   return state;
 }
 

@@ -11,8 +11,6 @@ const Card = (props) =>  {
           <div className="icon-container">
           <i className="material-icons icon">star_border
           </i>
-          <i className="material-icons icon">
-              crop_free</i>
           </div>
           <div className="card-term">
             <p>{props.term}</p>
