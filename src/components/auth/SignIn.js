@@ -1,22 +1,34 @@
 import React from 'react';
 import './auth.css';
 import { Link } from 'react-router-dom';
-import {reduxForm, Field} from 'redux-form';
+import {reduxForm, Field, focus} from 'redux-form';
 import Input from '../input/input';
 import {required, nonEmpty} from '../input/validators';
+import {login} from '../../actions/auth';
 
 export class SignIn extends React.Component {
   onSubmit(values) {
-    console.log(values);
+    return this.props.dispatch(login(values.username, values.password));
   }
 
   render() {
+    let error;
+    if (this.props.error) {
+      error = (
+        <div className="form-error" aria-live="polite">
+          {this.props.error}
+        </div>
+      );
+    }
+
+
     return (
       <div className="modal-container">
         <div className="modal-login">
          <form className="sign-in" onSubmit={this.props.handleSubmit(values=>this.onSubmit(values))}>
             <Link className="x-out" to='/'>X</Link>
             <h3>Login</h3>
+            {error}
             <Field
                className="sign-in-up-input"
                type="text"
@@ -46,5 +58,6 @@ export class SignIn extends React.Component {
 }
 
 export default reduxForm({
-  form: 'sign-in-form'
+  form: 'sign-in-form',
+  onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
 })(SignIn);

@@ -178,15 +178,21 @@ footer p {
   background-color: #BFBEBF;
   margin-right: 10%;
   margin-left: 10%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .deck-card p {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .card-number {
   align-self: flex-start;
 }
+
 
 .edit-btn {
   margin-bottom: 30px;
@@ -290,14 +296,26 @@ footer p {
 
   .deck-card {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     background-color: #BFBEBF;
     margin-right: 15%;
     margin-left: 15%;
+
   }
 
   .deck-card p {
-    font-size: 24px;
+    font-size: 18px;
+  }
+
+  .term-container {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .card-number {
+  margin-left: 15px;
+  margin-right: 15px;
   }
 }
 

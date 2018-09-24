@@ -13,9 +13,3 @@ export const addCard = (term, definition, deckIndex) => ({
   definition,
   deckIndex
 });
-
-export const FLIP_CARD = 'FLIP_CARD';
-export const flipCard = (isFlipped) => ({
-  type: FLIP_CARD,
-  isFlipped
-})

@@ -2,10 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import './Dashboard.css';
 import DeckPortal from './DeckPortal';
+import requiresLogin from '../requires-login';
+import {fetchProtectedData} from '../../actions/protected-data';
 
 
 
 export class Dashboard extends React.Component {
+  componentDidMount() {
+    this.props.dispatch(fetchProtectedData());
+  }
 
   render() {
     console.log();
