@@ -14,7 +14,7 @@ export class Dashboard extends React.Component {
 
   render() {
     console.log();
-    const userDecks = this.props.decks.filter((deck) => deck.username === 'username2');
+    const userDecks = this.props.decks.filter((deck) => deck.username === this.props.currentUser);
     // console.log(userDecks);
     const userDeckPortals = userDecks.map((deck, index) => {
       return (
@@ -49,7 +49,8 @@ export class Dashboard extends React.Component {
 
 
 const mapStateToProps = state => ({
-  decks: state.flashDecks.decks
+  decks: state.flashDecks.decks,
+  currentUser: state.auth.currentUser
 });
 
 export default connect(mapStateToProps)(Dashboard);

@@ -6,7 +6,7 @@ import {normalizeResponseErrors} from './utils';
 
 
 export const registerUser = user => dispatch => {
-  return fetch(`${API_BASE_URL}/users`, {
+  return fetch(`${API_BASE_URL}/signup`, {
       method: 'POST',
       headers: {
           'content-type': 'application/json'

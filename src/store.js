@@ -1,4 +1,4 @@
-import {createStore, applyMiddleware, combineReducers} from 'redux';
+import {createStore, applyMiddleware, combineReducers, compose} from 'redux';
 import {reducer as formReducer} from 'redux-form';
 import thunk from 'redux-thunk';
 import {loadAuthToken} from './local-storage';
@@ -7,16 +7,17 @@ import protectedDataReducer from './reducers/protected-data';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 
 import {flashDeckReducer} from './reducers/index';
-
-const store = createStore(
+const rootReducer =
   combineReducers({
     form: formReducer,
     flashDecks: flashDeckReducer,
     auth: authReducer,
     protectedData: protectedDataReducer
-  }),
+  });
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(rootReducer, /* preloadedState, */ composeEnhancers(
   applyMiddleware(thunk)
-);
+));
 
 const authToken = loadAuthToken();
 if (authToken) {

@@ -8,7 +8,9 @@ import {login} from '../../actions/auth';
 
 export class SignIn extends React.Component {
   onSubmit(values) {
-    return this.props.dispatch(login(values.username, values.password));
+    return this.props.dispatch(login(values.username, values.password))
+      .then(() => this.props.history.push('/dashboard'));
+      // .catch(() => alert('login failed'));
   }
 
   render() {

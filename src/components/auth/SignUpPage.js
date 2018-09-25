@@ -12,7 +12,6 @@ export function SignUpPage(props) {
     <div className="modal-container">
        <div className="modal-signup">
          <SignUpForm />
-         <Link to ='/'>Login</Link>
       </div>
     </div>
   );

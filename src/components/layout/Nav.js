@@ -1,19 +1,30 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import SignedOutLinks from './SignedOutLinks';
 import SignedInLinks from './SignedInLinks';
 import './Nav.css';
 
-const Nav = () =>  {
+const Nav = (props) =>  {
+
     return (
       <nav>
           <div className="logo">
             <Link to='/'>FlashDeck</Link>
           </div>
-          <SignedOutLinks />
+          {props.currentUser ?
           <SignedInLinks />
+          : <SignedOutLinks />
+          }
         </nav>
     )
 }
 
-export default Nav;
+
+const mapStateToProps = state => {
+  return {
+    currentUser: state.auth.currentUser
+  }
+
+}
+export default connect(mapStateToProps)(Nav);
