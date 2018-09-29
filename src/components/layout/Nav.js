@@ -6,6 +6,7 @@ import SignedInLinks from './SignedInLinks';
 import './Nav.css';
 
 const Nav = (props) =>  {
+  // console.log(props);
 
     return (
       <nav>

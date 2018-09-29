@@ -6,9 +6,7 @@ import {required, nonEmpty} from '../input/validators';
 
 
 export default class CreateDeckFormInputs extends React.Component {
-  onSubmit(values) {
-    console.log(values);
-  }
+
 
   render() {
     return (
@@ -17,31 +15,29 @@ export default class CreateDeckFormInputs extends React.Component {
           <div className="term-container">
             <Field
               className="term"
-              name="term"
+              name={`term${this.props.index}`}
               component={Input}
               validate={[required, nonEmpty]}
               type="text"
               placeholder="Enter Term"
-              name="term"
               />
               <br></br>
             <label
-              htmlFor="term" className="title-text">Term</label>
+              htmlFor={`term${this.props.index}`} className="title-text">Term</label>
           </div>
           <div className="definition-container">
             <Field
               className="definition"
-              name="definition"
+              name={`definition${this.props.index}`}
               component={Input}
               validate={[required, nonEmpty]}
               type="textarea"
               placeholder="Enter Definition"
-              name="definition"
               />
               <br></br>
             <label
               className="title-text"
-              htmlFor="definition" className="title-text"
+              htmlFor={`definition${this.props.index}`} className="title-text"
             >Definition
             </label>
           </div>

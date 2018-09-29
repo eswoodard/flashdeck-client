@@ -3,24 +3,27 @@ import {connect} from 'react-redux';
 import './Dashboard.css';
 import DeckPortal from './DeckPortal';
 import requiresLogin from '../requires-login';
-import {fetchProtectedData} from '../../actions/protected-data';
+import {getDeck} from '../../actions/index.js';
 
 
 
 export class Dashboard extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchProtectedData());
+    // console.log(this.props);
+    this.props.dispatch(getDeck());
   }
 
   render() {
-    console.log();
-    const userDecks = this.props.decks.filter((deck) => deck.username === this.props.currentUser);
-    // console.log(userDecks);
+    // console.log(this.props);
+    const userDecks = this.props.decks.filter((deck) => deck.username === this.props.username);
+    console.log(userDecks);
     const userDeckPortals = userDecks.map((deck, index) => {
+      console.log(deck);
       return (
-        <DeckPortal deck={deck} key={index}/>
+        <DeckPortal deck={deck.deck} key={index}/>
       )
     })
+    console.log(userDeckPortals);
 
     return (
       <div className="flashdecks">
@@ -53,5 +56,5 @@ const mapStateToProps = state => ({
   currentUser: state.auth.currentUser
 });
 
-export default connect(mapStateToProps)(Dashboard);
+export default requiresLogin()(connect(mapStateToProps)(Dashboard));
 
