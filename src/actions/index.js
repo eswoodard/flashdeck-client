@@ -1,5 +1,5 @@
 export const ADD_DECK = 'ADD_DECK';
-export const addList = (username, title) => ({
+export const addDeck = (username, title) => ({
   type: ADD_DECK,
   username,
   title

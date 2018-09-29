@@ -4,18 +4,19 @@ import './Dashboard.css';
 import DeckPortal from './DeckPortal';
 import requiresLogin from '../requires-login';
 import {fetchProtectedData} from '../../actions/protected-data';
+import {addDeck} from '../../actions/index';
 
 
 
 export class Dashboard extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchProtectedData());
+    this.props.dispatch(addDeck());
   }
 
   render() {
     console.log();
     const userDecks = this.props.decks.filter((deck) => deck.username === this.props.currentUser);
-    // console.log(userDecks);
+    console.log(userDecks);
     const userDeckPortals = userDecks.map((deck, index) => {
       return (
         <DeckPortal deck={deck} key={index}/>

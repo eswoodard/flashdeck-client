@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom';
 
 
 const DeckPortal = (props) =>  {
+console.log(props);
 
   return (
     <div className="flashdeck-summary-container">
