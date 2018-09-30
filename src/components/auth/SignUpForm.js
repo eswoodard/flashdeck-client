@@ -43,7 +43,7 @@ export class SignUpForm extends React.Component {
         <Field
           type="text"
           className="sign-in-up-input"
-          name="userName"
+          name="username"
           component={Input}
           validate={[required, nonEmpty, isTrimmed]}
           />

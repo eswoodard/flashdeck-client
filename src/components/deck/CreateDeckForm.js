@@ -1,5 +1,5 @@
 import React from 'react';
-import {reduxForm, Field} from 'redux-form';
+import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
 import './CreateDeckForm.css';
 import CreateDeckFormInputs from './CreateDeckFormInputs';
 import Input from '../input/input';
@@ -7,7 +7,6 @@ import {required, nonEmpty} from '../input/validators';
 import {connect} from 'react-redux';
 import {createDeck} from '../../actions/index'
 import requiresLogin from '../requires-login';
-
 
 
 export class CreateDeckForm extends React.Component {
@@ -18,7 +17,6 @@ export class CreateDeckForm extends React.Component {
     // console.log(values);
     const deck = Object.assign({}, values);
     this.props.dispatch(createDeck(deck));
-    // console.log(this.props);
     this.props.history.push('/dashboard');
 
   }
@@ -71,12 +69,8 @@ export class CreateDeckForm extends React.Component {
 }
 
 export default requiresLogin()(reduxForm({
-  form: 'create-deck-form'
+  form: 'create-deck-form',
+  onSubmitFail: (errors, dispatch) =>
+    dispatch(focus('create-deck-form', Object.keys(errors)[0]))
 })(CreateDeckForm));
 
-CreateDeckForm = connect(
-  state => ({
-    cardName: state.cardName
-
-  })
-)

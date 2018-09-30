@@ -6,25 +6,15 @@ const initialState = {
 
 export const flashDeckReducer = (state=initialState, action) => {
   if(action.type === actions.CREATE_DECK_SUCCESS) {
-    return Object.assign({}, state, {
-      decks: [...state.decks, {
-        ...action.deck
-      }]
-    });
+    console.log('deck successfully created', action);
   }
   else if (action.type === actions.GET_DECK_SUCCESS) {
-    let decks = state.decks.map((deck, index) => {
-
-      return Object.assign({}, deck, {
-        cards: [...deck.cards, {
-          term: action.term,
-          definition: action.definition,
-        }]
+    const deck = action.decks.deck;
+      return Object.assign({}, state, {
+        decks: [...state.decks,
+          ...deck
+        ]
       });
-    });
-    return Object.assign({}, state, {
-      decks
-    });
   }
   return state;
 }

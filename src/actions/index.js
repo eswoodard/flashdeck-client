@@ -25,7 +25,10 @@ export const getDeck = () => (dispatch, getState) => {
   axios.get(`${API_BASE_URL}/dashboard`, {
     headers: { Authorization: "Bearer " + token }
   })
-  .then((response) => dispatch(createDeckSuccess(response.data)))
+  .then((response) => {
+    // console.log(response);
+    dispatch(getDeckSuccess(response.data))
+  })
   .catch((err) => console.log(err))
 };
 
