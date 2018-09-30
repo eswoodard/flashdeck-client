@@ -17,9 +17,9 @@ import './App.css';
 class App extends Component {
   componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {
-        this.startPeriodicRefresh();
+        // this.startPeriodicRefresh();
     } else if (prevProps.loggedIn && !this.props.loggedIn) {
-        this.stopPeriodicRefresh();
+        // this.stopPeriodicRefresh();
     }
   }
 
@@ -27,12 +27,12 @@ class App extends Component {
         this.stopPeriodicRefresh();
     }
 
-    startPeriodicRefresh() {
-        this.refreshInterval = setInterval(
-            () => this.props.dispatch(refreshAuthToken()),
-            60 * 60 * 1000
-        );
-    }
+    // startPeriodicRefresh() {
+    //     this.refreshInterval = setInterval(
+    //         () => this.props.dispatch(refreshAuthToken()),
+    //         60 * 60 * 1000
+    //     );
+    // }
 
     stopPeriodicRefresh() {
         if (!this.refreshInterval) {

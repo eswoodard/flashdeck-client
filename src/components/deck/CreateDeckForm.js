@@ -1,18 +1,35 @@
 import React from 'react';
-import {reduxForm, Field} from 'redux-form';
+import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
 import './CreateDeckForm.css';
 import CreateDeckFormInputs from './CreateDeckFormInputs';
 import Input from '../input/input';
 import {required, nonEmpty} from '../input/validators';
-
+import {connect} from 'react-redux';
+import {createDeck} from '../../actions/index'
+import requiresLogin from '../requires-login';
 
 
 export class CreateDeckForm extends React.Component {
+  state = {
+    numCards: 1,
+  };
   onSubmit(values) {
-    console.log(values);
+    // console.log(values);
+    const deck = Object.assign({}, values);
+    this.props.dispatch(createDeck(deck));
+    this.props.history.push('/dashboard');
+
+  }
+  addCard = (event) => {
+    event.preventDefault();
+    this.setState((prevState) => ({numCards: prevState.numCards+1}));
   }
 
   render() {
+    let inputs = [];
+    for(let i=0; i<this.state.numCards; i++) {
+      inputs.push(<CreateDeckFormInputs index={i} key={i}/>)
+    }
     return (
       <div className="create-flashdeck">
         <h2>Create a new FlashDeck</h2>
@@ -29,11 +46,10 @@ export class CreateDeckForm extends React.Component {
               <br></br>
             <label htmlFor="title" className="title-text">Deck Title</label>
         </div>
-        <CreateDeckFormInputs/>
+        {inputs}
         <div className="deck-item">
           <div className="term-container">
-            <button className="add-card"
-            type="submit"
+            <button className="add-card" onClick={this.addCard}
             >+Add Card</button>
           </div>
         </div>
@@ -52,7 +68,9 @@ export class CreateDeckForm extends React.Component {
   }
 }
 
-export default reduxForm({
-  form: 'create-deck-form'
-})(CreateDeckForm);
+export default requiresLogin()(reduxForm({
+  form: 'create-deck-form',
+  onSubmitFail: (errors, dispatch) =>
+    dispatch(focus('create-deck-form', Object.keys(errors)[0]))
+})(CreateDeckForm));
 

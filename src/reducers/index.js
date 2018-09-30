@@ -1,64 +1,20 @@
 import * as actions from '../actions';
 
 const initialState = {
-  decks: [{
-      id: 1,
-      username: 'username1',
-      title: 'Example Deck 1',
-      cards: [{
-          term: 'Example term 1.1',
-          definition: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      }, {
-        term: 'Example term 1.2',
-        definition: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-      }, {
-          term: 'Example term 1.3',
-          definition: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-        }],
-
-  }, {
-      id: 2,
-      username: 'username2',
-      title: 'Example Deck 2',
-      cards: [{
-          term: 'Example term 2.1',
-          definition: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-      }, {
-        term: 'Example term 2.2',
-        definition: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-      }, {
-          term: 'Example term 2.3',
-          definition: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-        }],
-  }]
+  decks: []
 };
 
 export const flashDeckReducer = (state=initialState, action) => {
-  if(action.type === actions.ADD_DECK) {
-    return Object.assign({}, state, {
-      decks: [...state.decks, {
-        id: action.id,
-        username: action.username,
-        title: action.title,
-        cards: []
-      }]
-    });
+  if(action.type === actions.CREATE_DECK_SUCCESS) {
+    console.log('deck successfully created', action);
   }
-  else if (action.type === actions.ADD_CARD) {
-    let decks = state.decks.map((deck, index) => {
-      if (index !== action.deckIndex) {
-        return deck;
-      }
-      return Object.assign({}, deck, {
-        cards: [...deck.cards, {
-          term: action.term,
-          definition: action.definition,
-        }]
+  else if (action.type === actions.GET_DECK_SUCCESS) {
+    const deck = action.decks.deck;
+      return Object.assign({}, state, {
+        decks: [...state.decks,
+          ...deck
+        ]
       });
-    });
-    return Object.assign({}, state, {
-      decks
-    });
   }
   return state;
 }

@@ -3,24 +3,38 @@ import {connect} from 'react-redux';
 import './Dashboard.css';
 import DeckPortal from './DeckPortal';
 import requiresLogin from '../requires-login';
-import {fetchProtectedData} from '../../actions/protected-data';
+import {getDeck} from '../../actions/index.js';
 
 
 
 export class Dashboard extends React.Component {
+
   componentDidMount() {
-    this.props.dispatch(fetchProtectedData());
+    this.props.dispatch(getDeck());
   }
 
   render() {
-    console.log();
-    const userDecks = this.props.decks.filter((deck) => deck.username === this.props.currentUser);
+    // console.log(this.props);
+    const userDecks = this.props.decks.filter((deck) => {
+      console.log(deck.deckAuthor);
+      console.log(this.props.currentUser.id);
+      deck.deckAuthor == this.props.currentUser.id});
     // console.log(userDecks);
     const userDeckPortals = userDecks.map((deck, index) => {
       return (
         <DeckPortal deck={deck} key={index}/>
       )
     })
+
+    const memberDecks = this.props.decks.filter((deck) => deck.deckAuthor !== this.props.currentUser.id);
+    console.log(memberDecks);
+    const memberDeckPortals = memberDecks.map((deck, index) => {
+      // console.log(deck);
+      return (
+        <DeckPortal deck={deck} key={index}/>
+      )
+    })
+    // console.log(userDeckPortals);
 
     return (
       <div className="flashdecks">
@@ -38,6 +52,9 @@ export class Dashboard extends React.Component {
         </div>
         <div className="other-flashdecks">
           <h2>Member FlashDecks</h2>
+          <div className="flashdeck container">
+            {memberDeckPortals}
+          </div>
             <div className="break"></div>
             <hr className="hr1"/>
         </div>
@@ -53,5 +70,5 @@ const mapStateToProps = state => ({
   currentUser: state.auth.currentUser
 });
 
-export default connect(mapStateToProps)(Dashboard);
+export default requiresLogin()(connect(mapStateToProps)(Dashboard));
 

@@ -16,7 +16,7 @@
   /* height: 50px; */
   border: none;
   border-bottom: 3px solid #7C7F7F;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .title, .term, .definition {
@@ -108,7 +108,7 @@ p {
 
   .title, .term, .definition {
     width: 450px;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .add-card {
