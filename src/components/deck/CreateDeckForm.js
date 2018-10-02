@@ -1,10 +1,9 @@
 import React from 'react';
-import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
+import {reduxForm, Field, focus} from 'redux-form';
 import './CreateDeckForm.css';
 import CreateDeckFormInputs from './CreateDeckFormInputs';
 import Input from '../input/input';
 import {required, nonEmpty} from '../input/validators';
-import {connect} from 'react-redux';
 import {createDeck} from '../../actions/index'
 import requiresLogin from '../requires-login';
 
@@ -41,10 +40,10 @@ export class CreateDeckForm extends React.Component {
               component={Input}
               validate={[required, nonEmpty]}
               type="text"
-              placeholder="Subject"
+              placeholder="Deck Title"
               />
               <br></br>
-            <label htmlFor="title" className="title-text">Deck Title</label>
+
         </div>
         {inputs}
         <div className="deck-item">
@@ -73,4 +72,7 @@ export default requiresLogin()(reduxForm({
   onSubmitFail: (errors, dispatch) =>
     dispatch(focus('create-deck-form', Object.keys(errors)[0]))
 })(CreateDeckForm));
+
+
+{/* <label htmlFor="title" className="title-text">Deck Title</label> */}
 

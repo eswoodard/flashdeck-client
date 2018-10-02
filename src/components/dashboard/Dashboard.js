@@ -3,35 +3,33 @@ import {connect} from 'react-redux';
 import './Dashboard.css';
 import DeckPortal from './DeckPortal';
 import requiresLogin from '../requires-login';
-import {getDeck} from '../../actions/index.js';
+import {getAllDecks} from '../../actions/index.js';
+
 
 
 
 export class Dashboard extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(getDeck());
+    this.props.dispatch(getAllDecks());
   }
 
   render() {
     // console.log(this.props);
-    const userDecks = this.props.decks.filter((deck) => {
-      console.log(deck.deckAuthor);
-      console.log(this.props.currentUser.id);
-      deck.deckAuthor == this.props.currentUser.id});
+    const userDecks = this.props.decks.filter((deck) => deck.deckAuthor.username == this.props.currentUser.username);
     // console.log(userDecks);
     const userDeckPortals = userDecks.map((deck, index) => {
       return (
-        <DeckPortal deck={deck} key={index}/>
+        <DeckPortal deck={deck} dispatch={this.props.dispatch} key={index}/>
       )
     })
 
-    const memberDecks = this.props.decks.filter((deck) => deck.deckAuthor !== this.props.currentUser.id);
-    console.log(memberDecks);
+    const memberDecks = this.props.decks.filter((deck) => deck.deckAuthor.username !== this.props.currentUser.username);
+    // console.log(memberDecks);
     const memberDeckPortals = memberDecks.map((deck, index) => {
       // console.log(deck);
       return (
-        <DeckPortal deck={deck} key={index}/>
+        <DeckPortal deck={deck} dispatch={this.props.dispatch} key={index}/>
       )
     })
     // console.log(userDeckPortals);
@@ -39,7 +37,7 @@ export class Dashboard extends React.Component {
     return (
       <div className="flashdecks">
         <div className="user-flashdecks">
-          <h2>Your FlashDecks</h2>
+          <h2>Welcome {this.props.currentUser.firstName}! Here are your FlashDecks:</h2>
           <div className="flashdeck container">
             {userDeckPortals}
           </div>
