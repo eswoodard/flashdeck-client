@@ -3,14 +3,15 @@ import {connect} from 'react-redux';
 import './Dashboard.css';
 import DeckPortal from './DeckPortal';
 import requiresLogin from '../requires-login';
-import {getDeck} from '../../actions/index.js';
+import {getAllDecks} from '../../actions/index.js';
+
 
 
 
 export class Dashboard extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(getDeck());
+    this.props.dispatch(getAllDecks());
   }
 
   render() {
@@ -19,7 +20,7 @@ export class Dashboard extends React.Component {
     // console.log(userDecks);
     const userDeckPortals = userDecks.map((deck, index) => {
       return (
-        <DeckPortal deck={deck} key={index}/>
+        <DeckPortal deck={deck} dispatch={this.props.dispatch} key={index}/>
       )
     })
 
@@ -28,7 +29,7 @@ export class Dashboard extends React.Component {
     const memberDeckPortals = memberDecks.map((deck, index) => {
       // console.log(deck);
       return (
-        <DeckPortal deck={deck} key={index}/>
+        <DeckPortal deck={deck} dispatch={this.props.dispatch} key={index}/>
       )
     })
     // console.log(userDeckPortals);

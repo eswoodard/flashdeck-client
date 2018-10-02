@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {refreshAuthToken} from '../actions/auth';
+// import {refreshAuthToken} from '../actions/auth';
 import Nav from './layout/Nav';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LandingPage from './landing-page/LandingPage';

@@ -1,9 +1,11 @@
 import React from 'react';
+import Textarea from 'react-textarea-autosize';
+
 
 export default class Input extends React.Component {
   componentDidUpdate(prevProps) {
     if (!prevProps.meta.active && this.props.meta.active) {
-      this.input.focus()
+      this.textarea.focus()
     }
   }
   render() {
@@ -27,21 +29,23 @@ export default class Input extends React.Component {
           {error}
           {warning}
         </label>
-        <Element
+        <Textarea
           {...this.props.input}
           id={this.props.input.name}
           type={this.props.type}
           className={this.props.className}
-          ref={input => (this.input=input)}
+          inputRef={tag=> (this.textarea=tag)}
           name={this.props.name}
           placeholder={this.props.placeholder}
           aria-label={this.props.arialabel}
+          maxRows={4}
         >
           {this.props.children}
-        </Element>
+        </Textarea>
       </div>
 
     );
     }
 }
+
 
