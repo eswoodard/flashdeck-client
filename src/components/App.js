@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {refreshAuthToken} from '../actions/auth';
+// import {refreshAuthToken} from '../actions/auth';
 import Nav from './layout/Nav';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LandingPage from './landing-page/LandingPage';
@@ -9,6 +9,7 @@ import SignIn from './auth/SignIn';
 import SignUpPage from './auth/SignUpPage';
 import Dashboard from './dashboard/Dashboard';
 import CreateDeckForm from './deck/CreateDeckForm';
+import EditDeckForm from './deck/EditDeckForm';
 import Deck from './deck/Deck';
 import Quiz from './quiz/Quiz';
 import './App.css';
@@ -17,9 +18,9 @@ import './App.css';
 class App extends Component {
   componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {
-        this.startPeriodicRefresh();
+        // this.startPeriodicRefresh();
     } else if (prevProps.loggedIn && !this.props.loggedIn) {
-        this.stopPeriodicRefresh();
+        // this.stopPeriodicRefresh();
     }
   }
 
@@ -27,12 +28,12 @@ class App extends Component {
         this.stopPeriodicRefresh();
     }
 
-    startPeriodicRefresh() {
-        this.refreshInterval = setInterval(
-            () => this.props.dispatch(refreshAuthToken()),
-            60 * 60 * 1000
-        );
-    }
+    // startPeriodicRefresh() {
+    //     this.refreshInterval = setInterval(
+    //         () => this.props.dispatch(refreshAuthToken()),
+    //         60 * 60 * 1000
+    //     );
+    // }
 
     stopPeriodicRefresh() {
         if (!this.refreshInterval) {
@@ -53,6 +54,7 @@ class App extends Component {
             <Route exact path='/signup' component={SignUpPage} />
             <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/create-deck' component={CreateDeckForm} />
+            <Route exact path='/edit-deck' component={EditDeckForm} />
             <Route path='/deck/:id' component={Deck} />
             <Route path='quiz/:id' component={Quiz} />
           </main>

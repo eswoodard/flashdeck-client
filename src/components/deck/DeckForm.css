@@ -16,7 +16,7 @@
   /* height: 50px; */
   border: none;
   border-bottom: 3px solid #7C7F7F;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .title, .term, .definition {
@@ -73,7 +73,7 @@ p {
 }
 
 .create-card-btn {
-  margin-top: 30px;
+
   height: 50px;
   width: 200px;
   border: none;
@@ -82,6 +82,10 @@ p {
   float: right;
   margin-top: 40px;
   margin-bottom: 50px;
+}
+
+.delete {
+  margin-right: 10px;
 }
 
 @media (min-width: 768px) {
@@ -108,7 +112,7 @@ p {
 
   .title, .term, .definition {
     width: 450px;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .add-card {
