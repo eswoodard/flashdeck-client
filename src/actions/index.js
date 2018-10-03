@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-export const ADD_DECK = 'ADD_DECK';
-export const addDeck = (username, title) => ({
-  type: ADD_DECK,
-  username,
-  title
-});
-
-export const ADD_CARD = 'ADD_CARD';
-export const addCard = (term, definition, deckIndex) => ({
-  type: ADD_CARD,
-  term,
-  definition,
-  deckIndex
-});
-=======
 import axios from 'axios';
 import {API_BASE_URL} from '../config';
 
@@ -113,4 +97,3 @@ export const getDeckByIdSuccess = (deck) => ({
 //   definition,
 //   cardName,
 // });
->>>>>>> 097f3e804082ef9cf4a63385c279e348d75d6b52

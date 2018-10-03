@@ -3,28 +3,14 @@ import {connect} from 'react-redux';
 import './Dashboard.css';
 import DeckPortal from './DeckPortal';
 import requiresLogin from '../requires-login';
-<<<<<<< HEAD
-import {fetchProtectedData} from '../../actions/protected-data';
-import {addDeck} from '../../actions/index';
-=======
 import {getAllDecks} from '../../actions/index.js';
 
->>>>>>> 097f3e804082ef9cf4a63385c279e348d75d6b52
 
 
 
 export class Dashboard extends React.Component {
 
   componentDidMount() {
-<<<<<<< HEAD
-    this.props.dispatch(addDeck());
-  }
-
-  render() {
-    console.log();
-    const userDecks = this.props.decks.filter((deck) => deck.username === this.props.currentUser);
-    console.log(userDecks);
-=======
     this.props.dispatch(getAllDecks());
   }
 
@@ -32,7 +18,6 @@ export class Dashboard extends React.Component {
     // console.log(this.props);
     const userDecks = this.props.decks.filter((deck) => deck.deckAuthor.username == this.props.currentUser.username);
     // console.log(userDecks);
->>>>>>> 097f3e804082ef9cf4a63385c279e348d75d6b52
     const userDeckPortals = userDecks.map((deck, index) => {
       return (
         <DeckPortal deck={deck} dispatch={this.props.dispatch} key={index}/>

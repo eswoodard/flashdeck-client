@@ -4,11 +4,7 @@ import {withRouter} from 'react-router-dom';
 
 
 const DeckPortal = (props) =>  {
-<<<<<<< HEAD
-console.log(props);
-=======
   // console.log(props.deck._id);
->>>>>>> 097f3e804082ef9cf4a63385c279e348d75d6b52
 
   return (
 
