@@ -24,10 +24,10 @@ export class Card  extends React.Component  {
         <div className="card">
           <ReactCardFlip isFlipped={this.state.isFlipped} flipSpeedBackToFront={this.state.flipSpeed} flipSpeedFrontToBack={this.state.flipSpeed} infinite={this.state.infinite}>
             <div className="card-front side" key="front" onClick={this.handleClick}>
-              <div className="icon-container">
+              {/* <div className="icon-container">
               <i className="material-icons icon">star_border
               </i>
-              </div>
+              </div> */}
               <div className="card-term">
                 <p>{this.props.term}</p>
               </div>

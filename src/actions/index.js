@@ -63,6 +63,33 @@ export const getDeckByIdSuccess = (deck) => ({
 })
 
 
+// export const LOAD_DECK_DATA = 'LOAD_DECK_DATA';
+// export const loadDeckData = (deck) => {
+//   type: LOAD_DECK_DATA,
+//   deck
+// }
+
+
+
+// export const EDIT_DECK = 'EDIT_DECK';
+// export const editDeck = (deck) => (dispatch, getState) => {
+//   console.log(deck);
+//   const token = getState().auth.authToken;
+//   axios.put(`${API_BASE_URL}/edit-deck`, deck, {
+//     headers: { Authorization: "Bearer " + token }
+//   })
+//   .then((response) => dispatch(createDeckSuccess(response.data)))
+//   .catch((err) => console.log(err))
+// };
+
+
+// export const CREATE_DECK_SUCCESS = "CREATE_DECK_SUCCESS";
+// export const createDeckSuccess = (deck) => ({
+//   type: CREATE_DECK_SUCCESS,
+//   deck,
+// })
+
+
 // export const ADD_CARD = 'ADD_CARD';
 // export const addCard = (term, definition, cardName) => ({
 //   type: ADD_CARD,
