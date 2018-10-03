@@ -1,22 +1,19 @@
 import React from 'react';
-import {Field} from 'redux-form';
+import {Field, FieldArray, reduxForm} from 'redux-form';
 import Input from '../input/input';
 import {required, nonEmpty} from '../input/validators';
 import Textarea from '../input/textarea';
 
 
-
-export default class CreateDeckFormInputs extends React.Component {
-
+export default class DeckFormInputs extends React.Component {
 
   render() {
     return (
         <div className="deck-item">
-          {/* <p>1</p> */}
           <div className="term-container">
             <Field
               className="term"
-              name={`cardTerm${this.props.index}`}
+              name={`term${this.props.index}`}
               component={Input}
               validate={[required, nonEmpty]}
               type="text"
@@ -24,17 +21,16 @@ export default class CreateDeckFormInputs extends React.Component {
               arialabel={`term${this.props.index}`}
               />
               <br></br>
-
           </div>
           <div className="definition-container">
             <Field
               className="definition"
-              name={`cardDefinition${this.props.index}`}
+              name={`definition${this.props.index}`}
               component={Textarea}
               validate={[required, nonEmpty]}
               type="textarea"
               placeholder="Definition"
-              arialabel={`definition${this.props.indes}`}
+              arialabel={`definition${this.props.index}`}
               />
               <br></br>
 
