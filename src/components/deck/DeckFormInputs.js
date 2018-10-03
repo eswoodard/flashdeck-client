@@ -16,7 +16,7 @@ export default class CreateDeckFormInputs extends React.Component {
           <div className="term-container">
             <Field
               className="term"
-              name={`term${this.props.index}`}
+              name={`cardTerm${this.props.index}`}
               component={Input}
               validate={[required, nonEmpty]}
               type="text"
@@ -29,7 +29,7 @@ export default class CreateDeckFormInputs extends React.Component {
           <div className="definition-container">
             <Field
               className="definition"
-              name={`definition${this.props.index}`}
+              name={`cardDefinition${this.props.index}`}
               component={Textarea}
               validate={[required, nonEmpty]}
               type="textarea"
@@ -44,9 +44,3 @@ export default class CreateDeckFormInputs extends React.Component {
   }
 }
 
-{/* <label htmlFor={`term${this.props.index}`} className="title-text">Term</label> */}
-{/* <label
-              className="title-text"
-              htmlFor={`definition${this.props.index}`} className="title-text"
-            >Definition
-            </label> */}

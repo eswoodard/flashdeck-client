@@ -199,8 +199,12 @@ footer p {
 
 
 .edit-btn {
-  margin-bottom: 30px;
-  margin-top: 30px;
+  width: 25%;
+  height: 55px;
+  font-size: 16px;
+  margin-top: 25px;
+  border: none;
+  background-color: #E5E4E5
 
 }
 

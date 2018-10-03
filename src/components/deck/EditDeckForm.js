@@ -6,9 +6,10 @@ import Input from '../input/input';
 import {required, nonEmpty} from '../input/validators';
 import {createDeck} from '../../actions/index'
 import requiresLogin from '../requires-login';
+import {connect} from 'react-redux';
 
 
-export class CreateDeckForm extends React.Component {
+export class EditDeckForm extends React.Component {
   state = {
     numCards: 1,
   };
@@ -25,22 +26,25 @@ export class CreateDeckForm extends React.Component {
   }
 
   render() {
+
+    console.log(this.props.initialValues);
     let inputs = [];
     for(let i=0; i<this.state.numCards; i++) {
       inputs.push(<DeckFormInputs index={i} key={i}/>)
     }
     return (
       <div className="create-flashdeck">
-        <h2>Create a new FlashDeck</h2>
+        <h2>Edit Deck</h2>
         <form className="create-form" autoComplete="off" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           <div className="deck-info">
             <Field
               className="title"
-              name="title"
+              name="deckTitle"
               component={Input}
               validate={[required, nonEmpty]}
               type="text"
               placeholder="Deck Title"
+              arialabel="Deck Title"
               />
               <br></br>
 
@@ -58,7 +62,13 @@ export class CreateDeckForm extends React.Component {
           disabled={
             this.props.pristine || this.props.submitting
           }>
-          Create
+          Submit Changes
+        </button>
+        <button
+          type="submit"
+          className="create-card-btn delete"
+          >
+          Delete Deck
         </button>
       </form>
       </div>
@@ -67,11 +77,19 @@ export class CreateDeckForm extends React.Component {
   }
 }
 
-export default requiresLogin()(reduxForm({
-  form: 'create-deck-form',
-  onSubmitFail: (errors, dispatch) =>
-    dispatch(focus('create-deck-form', Object.keys(errors)[0]))
-})(CreateDeckForm));
+const mapStateToProps = (state) => ({
+  initialValues: state.flashDecks.currentDeck
+})
+
+
+EditDeckForm = reduxForm({
+  form: 'edit-deck-form'
+})(EditDeckForm)
+
+export default connect(mapStateToProps)(EditDeckForm);
+
+
+
 
 
 

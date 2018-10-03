@@ -15,7 +15,7 @@ export const flashDeckReducer = (state=initialState, action) => {
     })
   }
   else if (action.type === actions.GET_ALL_DECKS_SUCCESS) {
-    console.log(action);
+    // console.log(action);
       return Object.assign({}, state, {
         decks: [
           ...action.decks
@@ -25,13 +25,19 @@ export const flashDeckReducer = (state=initialState, action) => {
   else if (action.type === actions.GET_DECK_BY_ID_SUCCESS) {
     // console.log(action);
     const deck = action.deck.deck;
-    console.log(deck);
+    // console.log(deck);
       return Object.assign({}, state, {
         currentDeck:
           deck
-
       });
   }
+  // else if (action.type === actions.LOAD_DECK_DATA) {
+  //   return {
+  //     data: action.data
+  //   }
+  // )
+  // }
+
   return state;
 }
 

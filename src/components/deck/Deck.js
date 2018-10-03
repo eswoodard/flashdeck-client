@@ -11,34 +11,28 @@ import Slider from 'react-slick';
 
 export class Deck extends React.Component  {
 
+
  componentDidMount() {
     this.props.dispatch(getDeckById(this.props.match.params.id));
   }
 
   render() {
+    console.log(this.props);
 
-    var settings = {
+    var sliderSettings = {
       dots: true,
       infinite: true,
-      // arrows: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
       swipeToSlide: true,
       lazyLoad: true,
       accessibility: true
-
     };
 
-    // console.log(this.props);
     if (!this.props.currentDeck){
-      console.log('I am null')
       return null;
-    }
-
-    else  {
-      console.log('hello');
-      console.log(this.props);
+    } else  {
       const cards = this.props.currentDeck.deckCards.map((card, index) =>
         <Card term={card.cardTerm} definition={card.cardDefinition} key={index} />
       );
@@ -55,7 +49,7 @@ export class Deck extends React.Component  {
               </header>
               <p className="instructions">Click card to flip it. Put a star on cards that need more practice.</p>
         </div>
-        <Slider {...settings}>
+        <Slider {...sliderSettings}>
           {cards}
         </Slider>
         {/* <DeckNavigation cardNumber={this.props.currentDeck.deckCards.length}/>
@@ -67,14 +61,14 @@ export class Deck extends React.Component  {
         <div className="card-list-container">
         <div className="deck-list-header">
               <h3>{this.props.currentDeck.deckCards.length} Terms in this deck</h3>
-              <select name="card-drop-down" id="card-drop-down">
+              {/* <select name="card-drop-down" id="card-drop-down">
                 <option value="original">All</option>
                 <option value="starred">Starred</option>
-            </select>
+            </select> */}
             </div>
             {cardList}
             <div className="quiz-button-container">
-                  <button className="edit-btn">Edit Deck</button>
+                  <button className="edit-btn" onClick= { () => this.props.history.push('/edit-deck')}>Add or Remove Terms</button>
                 </div>
           </div>
         </div>
@@ -90,3 +84,4 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(Deck);
+
