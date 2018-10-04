@@ -1,5 +1,5 @@
 import React from 'react';
-import {reduxForm, Field, focus} from 'redux-form';
+import {reduxForm, Field, focus, FieldArray} from 'redux-form';
 import './DeckForm.css';
 import DeckFormInputs from './DeckFormInputs';
 import Input from '../input/input';
@@ -8,49 +8,79 @@ import {createDeck} from '../../actions/index'
 import requiresLogin from '../requires-login';
 
 
-export class CreateDeckForm extends React.Component {
-  state = {
-    numCards: 1,
-  };
-  onSubmit(values) {
-    // console.log(values);
+const renderCards = ({ fields }) => (
+  <div className="deck-item">
+    {fields.map((card, index) => (
+      <div key={index}>
+        <button
+          type="button"
+          title="Remove Member"
+          onClick={() => fields.remove(index)}
+        />
+        <p>{index + 1}</p>
+        <Field
+          name={`${card}.cardTerm`}
+          type="text"
+          component={Input}
+          label="Card Term"
+        />
+        <Field
+          name={`${card}.cardDefinition`}
+          type="text"
+          component={Input}
+          label="Card Definition"
+        />
+      </div>
+    ))}
+    <div>
+      <button type="button" onClick={() => fields.push({})}>+Add Card</button>
+    </div>
+  </div>
+);
+
+  // state = {
+  //   numCards: 1,
+  // };
+  function onSubmit(values) {
+    console.log(values);
     const deck = Object.assign({}, values);
     this.props.dispatch(createDeck(deck));
     this.props.history.push('/dashboard');
 
   }
-  addCard = (event) => {
-    event.preventDefault();
-    this.setState((prevState) => ({numCards: prevState.numCards+1}));
-  }
+  // addCard = (event) => {
+  //   event.preventDefault();
+  //   this.setState((prevState) => ({numCards: prevState.numCards+1}));
+  // }
 
+
+
+    // console.log(this.props.initialValues);
+    // let inputs = [];
+    // for(let i=0; i<this.state.numCards; i++) {
+    //   inputs.push(<DeckFormInputs index={i} key={i}/>)
+    // }
+
+export class CreateDeckForm extends React.Component {
   render() {
-    let inputs = [];
-    for(let i=0; i<this.state.numCards; i++) {
-      inputs.push(<DeckFormInputs index={i} key={i}/>)
-    }
     return (
       <div className="create-flashdeck">
-        <h2>Create a new FlashDeck</h2>
-        <form className="create-form" autoComplete="off" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+        <h2>Create Deck</h2>
+        <form className="create-form" autoComplete="off" onSubmit={this.props.handleSubmit(values => onSubmit(values))}>
           <div className="deck-info">
             <Field
               className="title"
-              name="title"
+              name="deckTitle"
               component={Input}
               validate={[required, nonEmpty]}
               type="text"
               placeholder="Deck Title"
+              arialabel="Deck Title"
               />
               <br></br>
-
         </div>
-        {inputs}
+        <FieldArray name="cards" component={renderCards} />
         <div className="deck-item">
-          <div className="term-container">
-            <button className="add-card" onClick={this.addCard}
-            >+Add Card</button>
-          </div>
         </div>
         <button
           type="submit"
@@ -58,19 +88,27 @@ export class CreateDeckForm extends React.Component {
           disabled={
             this.props.pristine || this.props.submitting
           }>
-          Create
+         Create Deck
+        </button>
+        <button
+          type="submit"
+          className="create-card-btn delete"
+          >
+          Cancel
         </button>
       </form>
       </div>
 
     )
   }
-}
+  }
+
+
 
 export default requiresLogin()(reduxForm({
   form: 'create-deck-form',
-  onSubmitFail: (errors, dispatch) =>
-    dispatch(focus('create-deck-form', Object.keys(errors)[0]))
+  // onSubmitFail: (errors, dispatch) =>
+  //   dispatch(focus('create-deck-form', Object.keys(errors)[0]))
 })(CreateDeckForm));
 
 
