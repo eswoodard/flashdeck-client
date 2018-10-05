@@ -17,7 +17,7 @@ export class Deck extends React.Component  {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
 
     var sliderSettings = {
       dots: true,

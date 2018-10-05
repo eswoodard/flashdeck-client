@@ -1,5 +1,5 @@
 import React from 'react';
-import {reduxForm, Field, focus} from 'redux-form';
+import {reduxForm, Field, focus, FieldArray} from 'redux-form';
 import './DeckForm.css';
 import DeckFormInputs from './DeckFormInputs';
 import Input from '../input/input';
@@ -9,29 +9,18 @@ import requiresLogin from '../requires-login';
 import {connect} from 'react-redux';
 
 
-export class EditDeckForm extends React.Component {
-  state = {
-    numCards: 1,
-  };
-  onSubmit(values) {
-    // console.log(values);
-    const deck = Object.assign({}, values);
-    this.props.dispatch(createDeck(deck));
-    this.props.history.push('/dashboard');
+  // function onSubmit(values) {
+  //   const deck = Object.assign({}, values);
+  //   this.props.dispatch(createDeck(deck));
+  //   this.props.history.push('/dashboard');
 
-  }
-  addCard = (event) => {
-    event.preventDefault();
-    this.setState((prevState) => ({numCards: prevState.numCards+1}));
-  }
+  // }
+
+
+export class EditDeckForm extends React.Component {
 
   render() {
-
     console.log(this.props.initialValues);
-    let inputs = [];
-    for(let i=0; i<this.state.numCards; i++) {
-      inputs.push(<DeckFormInputs index={i} key={i}/>)
-    }
     return (
       <div className="create-flashdeck">
         <h2>Edit Deck</h2>
@@ -47,14 +36,9 @@ export class EditDeckForm extends React.Component {
               arialabel="Deck Title"
               />
               <br></br>
-
         </div>
-        {inputs}
+        <FieldArray name="deckCards" component={DeckFormInputs} />
         <div className="deck-item">
-          <div className="term-container">
-            <button className="add-card" onClick={this.addCard}
-            >+Add Card</button>
-          </div>
         </div>
         <button
           type="submit"
@@ -62,7 +46,7 @@ export class EditDeckForm extends React.Component {
           disabled={
             this.props.pristine || this.props.submitting
           }>
-          Submit Changes
+         Submit Changes
         </button>
         <button
           type="submit"
@@ -80,7 +64,6 @@ export class EditDeckForm extends React.Component {
 const mapStateToProps = (state) => ({
   initialValues: state.flashDecks.currentDeck
 })
-
 
 EditDeckForm = reduxForm({
   form: 'edit-deck-form'

@@ -1,5 +1,5 @@
 import React from 'react';
-import {reduxForm, Field, focus} from 'redux-form';
+import {reduxForm, Field, focus, FieldArray} from 'redux-form';
 import './DeckForm.css';
 import DeckFormInputs from './DeckFormInputs';
 import Input from '../input/input';
@@ -8,49 +8,36 @@ import {createDeck} from '../../actions/index'
 import requiresLogin from '../requires-login';
 
 
+
 export class CreateDeckForm extends React.Component {
-  state = {
-    numCards: 1,
-  };
   onSubmit(values) {
     // console.log(values);
     const deck = Object.assign({}, values);
+    // console.log(deck);
     this.props.dispatch(createDeck(deck));
     this.props.history.push('/dashboard');
-
-  }
-  addCard = (event) => {
-    event.preventDefault();
-    this.setState((prevState) => ({numCards: prevState.numCards+1}));
   }
 
   render() {
-    let inputs = [];
-    for(let i=0; i<this.state.numCards; i++) {
-      inputs.push(<DeckFormInputs index={i} key={i}/>)
-    }
+
+
     return (
       <div className="create-flashdeck">
-        <h2>Create a new FlashDeck</h2>
+        <h2>Create Your FlashDeck</h2>
         <form className="create-form" autoComplete="off" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           <div className="deck-info">
             <Field
               className="title"
-              name="title"
+              name="deckTitle"
               component={Input}
-              validate={[required, nonEmpty]}
               type="text"
               placeholder="Deck Title"
+              arialabel="Deck Title"
               />
               <br></br>
-
         </div>
-        {inputs}
+        <FieldArray name="deckCards" component={DeckFormInputs} />
         <div className="deck-item">
-          <div className="term-container">
-            <button className="add-card" onClick={this.addCard}
-            >+Add Card</button>
-          </div>
         </div>
         <button
           type="submit"
@@ -58,19 +45,33 @@ export class CreateDeckForm extends React.Component {
           disabled={
             this.props.pristine || this.props.submitting
           }>
-          Create
+         Create Deck
+        </button>
+        <button
+          type="submit"
+          className="create-card-btn delete"
+          onSubmit={()=>this.props.history.push('/dashboard')}
+          >
+          Cancel
         </button>
       </form>
       </div>
 
     )
   }
-}
+  }
+
+
 
 export default requiresLogin()(reduxForm({
   form: 'create-deck-form',
-  onSubmitFail: (errors, dispatch) =>
-    dispatch(focus('create-deck-form', Object.keys(errors)[0]))
+  initialValues: {
+    "deckCards": [
+      {}
+    ]
+  }
+  // onSubmitFail: (errors, dispatch) =>
+  //   dispatch(focus('create-deck-form', Object.keys(errors)[0]))
 })(CreateDeckForm));
 
 

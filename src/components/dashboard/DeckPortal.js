@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom';
 
 
 const DeckPortal = (props) =>  {
-  // console.log(props.deck._id);
+  // console.log(props);
 
   return (
 

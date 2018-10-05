@@ -1,46 +1,47 @@
 import React from 'react';
-import {Field} from 'redux-form';
+import {Field, FieldArray, reduxForm} from 'redux-form';
 import Input from '../input/input';
 import {required, nonEmpty} from '../input/validators';
 import Textarea from '../input/textarea';
 
 
+const DeckFormInputs = ({ fields }) => (
+  <div className="deck-item">
+    {fields.map((deckCard, index) => (
+      <div key={index} className="card-input-container">
+        <button
+          className="remove-btn"
+          type="button"
+          title="Remove Field"
+          onClick={() => fields.remove(index)}
+        >
+        <i className="material-icons">
+        delete</i>
+        </button>
+        <p>{index + 1}</p>
+        <Field
+          name={`${deckCard}.cardTerm`}
+          type="text"
+          component={Textarea}
+          className="term"
+          placeholder="Term"
+          arialabel={`${deckCard}.cardTerm`}
+        />
+        <Field
+          name={`${deckCard}.cardDefinition`}
+          type="textarea"
+          component={Textarea}
+          className="definition"
+          placeholder="Definition"
+          arialabel={`${deckCard}.cardDefinition`}
+        />
+      </div>
+    ))}
+    <div className="deck-item">
+      <button type="button" className="add-card" onClick={() => fields.push({})}>+Add Card</button>
+    </div>
+  </div>
+);
 
-export default class CreateDeckFormInputs extends React.Component {
-
-
-  render() {
-    return (
-        <div className="deck-item">
-          {/* <p>1</p> */}
-          <div className="term-container">
-            <Field
-              className="term"
-              name={`cardTerm${this.props.index}`}
-              component={Input}
-              validate={[required, nonEmpty]}
-              type="text"
-              placeholder="Term"
-              arialabel={`term${this.props.index}`}
-              />
-              <br></br>
-
-          </div>
-          <div className="definition-container">
-            <Field
-              className="definition"
-              name={`cardDefinition${this.props.index}`}
-              component={Textarea}
-              validate={[required, nonEmpty]}
-              type="textarea"
-              placeholder="Definition"
-              arialabel={`definition${this.props.indes}`}
-              />
-              <br></br>
-
-          </div>
-        </div>
-    )
-  }
-}
+export default DeckFormInputs;
 
