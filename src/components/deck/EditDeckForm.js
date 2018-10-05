@@ -7,20 +7,24 @@ import {required, nonEmpty} from '../input/validators';
 import {createDeck} from '../../actions/index'
 import requiresLogin from '../requires-login';
 import {connect} from 'react-redux';
+import {editDeck} from '../../actions/index'
 
 
-  // function onSubmit(values) {
-  //   const deck = Object.assign({}, values);
-  //   this.props.dispatch(createDeck(deck));
-  //   this.props.history.push('/dashboard');
-
-  // }
 
 
 export class EditDeckForm extends React.Component {
 
+  onSubmit(values) {
+    console.log(values);
+    const deck = Object.assign({}, values);
+    console.log(deck)
+    this.props.dispatch(editDeck(deck));
+    this.props.history.push(`/dashboard`);
+
+  }
+
   render() {
-    console.log(this.props.initialValues);
+    console.log(this.props);
     return (
       <div className="create-flashdeck">
         <h2>Edit Deck</h2>

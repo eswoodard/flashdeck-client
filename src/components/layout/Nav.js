@@ -6,7 +6,7 @@ import SignedInLinks from './SignedInLinks';
 import './Nav.css';
 
 const Nav = (props) =>  {
-  // console.log(props);
+  console.log(props);
 
     return (
       <nav>
@@ -14,7 +14,7 @@ const Nav = (props) =>  {
             <Link to='/'>FlashDeck</Link>
           </div>
           {props.currentUser ?
-          <SignedInLinks />
+          <SignedInLinks  />
           : <SignedOutLinks />
           }
         </nav>
@@ -23,8 +23,9 @@ const Nav = (props) =>  {
 
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
-    currentUser: state.auth.currentUser
+    currentUser: state.auth.currentUser,
   }
 
 }

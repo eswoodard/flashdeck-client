@@ -31,15 +31,17 @@ export const flashDeckReducer = (state=initialState, action) => {
           deck
       });
   }
-  // else if (action.type === actions.LOAD_DECK_DATA) {
-  //   return {
-  //     data: action.data
-  //   }
-  // )
-  // }
+  else if(action.type === actions.EDIT_DECK_SUCCESS) {
+    console.log('deck successfully edited', action);
+    const decks = state.decks.slice();
+    decks.unshift(action.deck.deck);
+    return Object.assign({}, state, {
+      decks
+    })
+  };
+
 
   return state;
 }
 
 
-// ...state.decks,

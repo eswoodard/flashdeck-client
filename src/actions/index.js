@@ -13,13 +13,13 @@ export const createDeck = (deck) => (dispatch, getState) => {
 };
 
 
-export const CREATE_DECK_SUCCESS = "CREATE_DECK_SUCCESS";
+export const CREATE_DECK_SUCCESS = 'CREATE_DECK_SUCCESS';
 export const createDeckSuccess = (deck) => ({
   type: CREATE_DECK_SUCCESS,
   deck,
 })
 
-export const GET_ALL_DECKS = "GET_ALL_DECKS";
+export const GET_ALL_DECKS = 'GET_ALL_DECKS';
 export const getAllDecks = () => (dispatch, getState) => {
   if (getState().flashDecks.decks.length > 0) {
     return
@@ -35,7 +35,7 @@ export const getAllDecks = () => (dispatch, getState) => {
   .catch((err) => console.log(err))
 };
 
-export const GET_ALL_DECKS_SUCCESS = "GET_ALL_DECKS_SUCCESS";
+export const GET_ALL_DECKS_SUCCESS = 'GET_ALL_DECKS_SUCCESS';
 export const getAllDecksSuccess = (decks) => ({
   type: GET_ALL_DECKS_SUCCESS,
   decks
@@ -61,6 +61,28 @@ export const getDeckByIdSuccess = (deck) => ({
   type: GET_DECK_BY_ID_SUCCESS,
   deck
 })
+
+export const EDIT_DECK = 'EDIT_DECK';
+export const editDeck = (deck) => (dispatch, getState) => {
+  console.log(deck);
+  const deckId = deck._id;
+  const token = getState().auth.authToken;
+  axios.put(`${API_BASE_URL}/deck/${deckId}`, deck, {
+    headers: { Authorization: "Bearer " + token }
+  })
+  .then((response) => dispatch(editDeckSuccess(response.data)))
+  .catch((err) => console.log(err))
+};
+
+
+export const EDIT_DECK_SUCCESS = 'EDIT_DECK_SUCCESS';
+export const editDeckSuccess = (deck) => ({
+  type: EDIT_DECK_SUCCESS,
+  deck,
+})
+
+
+
 
 
 // export const LOAD_DECK_DATA = 'LOAD_DECK_DATA';
