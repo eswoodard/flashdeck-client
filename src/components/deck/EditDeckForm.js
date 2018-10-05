@@ -37,7 +37,7 @@ export class EditDeckForm extends React.Component {
               />
               <br></br>
         </div>
-        <FieldArray name="cards" component={DeckFormInputs} />
+        <FieldArray name="deckCards" component={DeckFormInputs} />
         <div className="deck-item">
         </div>
         <button
@@ -59,17 +59,11 @@ export class EditDeckForm extends React.Component {
 
     )
   }
-  }
-
-
-
-
-
+}
 
 const mapStateToProps = (state) => ({
   initialValues: state.flashDecks.currentDeck
 })
-
 
 EditDeckForm = reduxForm({
   form: 'edit-deck-form'

@@ -8,7 +8,7 @@ import Textarea from '../input/textarea';
 const DeckFormInputs = ({ fields }) => (
   <div className="deck-item">
     {fields.map((deckCard, index) => (
-      <div key={index} className="card-container">
+      <div key={index} className="card-input-container">
         <button
           className="remove-btn"
           type="button"
@@ -26,8 +26,6 @@ const DeckFormInputs = ({ fields }) => (
           className="term"
           placeholder="Term"
           arialabel={`${deckCard}.cardTerm`}
-          validate={[required, nonEmpty]}
-
         />
         <Field
           name={`${deckCard}.cardDefinition`}
@@ -36,7 +34,6 @@ const DeckFormInputs = ({ fields }) => (
           className="definition"
           placeholder="Definition"
           arialabel={`${deckCard}.cardDefinition`}
-          validate={[required, nonEmpty]}
         />
       </div>
     ))}

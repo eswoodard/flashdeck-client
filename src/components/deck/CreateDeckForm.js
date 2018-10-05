@@ -11,9 +11,9 @@ import requiresLogin from '../requires-login';
 
 export class CreateDeckForm extends React.Component {
   onSubmit(values) {
-    console.log(values);
+    // console.log(values);
     const deck = Object.assign({}, values);
-    console.log(deck);
+    // console.log(deck);
     this.props.dispatch(createDeck(deck));
     this.props.history.push('/dashboard');
   }
