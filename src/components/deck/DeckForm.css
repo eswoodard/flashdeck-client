@@ -39,8 +39,20 @@
 
 }
 
+.card-container, .remove-btn {
+  border: none;
+  background-color: #E5E4E5
+}
+
+
+.remove-btn i {
+  border: none;
+  color: #5C5B5C
+}
+
 .deck-item p {
-  font-size: 16px;
+  font-size: 22px;
+  color: #5C5B5C;
 }
 
 .title-text {
@@ -51,7 +63,7 @@
   float: right;
 }
 
-.deck-item {
+.deck-item > div {
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;

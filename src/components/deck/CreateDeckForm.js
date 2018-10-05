@@ -8,78 +8,35 @@ import {createDeck} from '../../actions/index'
 import requiresLogin from '../requires-login';
 
 
-const renderCards = ({ fields }) => (
-  <div className="deck-item">
-    {fields.map((card, index) => (
-      <div key={index}>
-        <button
-          type="button"
-          title="Remove Member"
-          onClick={() => fields.remove(index)}
-        />
-        <p>{index + 1}</p>
-        <Field
-          name={`${card}.cardTerm`}
-          type="text"
-          component={Input}
-          label="Card Term"
-        />
-        <Field
-          name={`${card}.cardDefinition`}
-          type="text"
-          component={Input}
-          label="Card Definition"
-        />
-      </div>
-    ))}
-    <div>
-      <button type="button" onClick={() => fields.push({})}>+Add Card</button>
-    </div>
-  </div>
-);
-
-  // state = {
-  //   numCards: 1,
-  // };
-  function onSubmit(values) {
-    console.log(values);
-    const deck = Object.assign({}, values);
-    this.props.dispatch(createDeck(deck));
-    this.props.history.push('/dashboard');
-
-  }
-  // addCard = (event) => {
-  //   event.preventDefault();
-  //   this.setState((prevState) => ({numCards: prevState.numCards+1}));
-  // }
-
-
-
-    // console.log(this.props.initialValues);
-    // let inputs = [];
-    // for(let i=0; i<this.state.numCards; i++) {
-    //   inputs.push(<DeckFormInputs index={i} key={i}/>)
-    // }
 
 export class CreateDeckForm extends React.Component {
+  onSubmit(values) {
+    console.log(values);
+    const deck = Object.assign({}, values);
+    console.log(deck);
+    this.props.dispatch(createDeck(deck));
+    this.props.history.push('/dashboard');
+  }
+
   render() {
+
+
     return (
       <div className="create-flashdeck">
-        <h2>Create Deck</h2>
-        <form className="create-form" autoComplete="off" onSubmit={this.props.handleSubmit(values => onSubmit(values))}>
+        <h2>Create Your FlashDeck</h2>
+        <form className="create-form" autoComplete="off" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           <div className="deck-info">
             <Field
               className="title"
               name="deckTitle"
               component={Input}
-              validate={[required, nonEmpty]}
               type="text"
               placeholder="Deck Title"
               arialabel="Deck Title"
               />
               <br></br>
         </div>
-        <FieldArray name="cards" component={renderCards} />
+        <FieldArray name="deckCards" component={DeckFormInputs} />
         <div className="deck-item">
         </div>
         <button
@@ -93,6 +50,7 @@ export class CreateDeckForm extends React.Component {
         <button
           type="submit"
           className="create-card-btn delete"
+          onSubmit={()=>this.props.history.push('/dashboard')}
           >
           Cancel
         </button>
@@ -107,6 +65,11 @@ export class CreateDeckForm extends React.Component {
 
 export default requiresLogin()(reduxForm({
   form: 'create-deck-form',
+  initialValues: {
+    "deckCards": [
+      {}
+    ]
+  }
   // onSubmitFail: (errors, dispatch) =>
   //   dispatch(focus('create-deck-form', Object.keys(errors)[0]))
 })(CreateDeckForm));

@@ -29,7 +29,7 @@ export const getAllDecks = () => (dispatch, getState) => {
     headers: { Authorization: "Bearer " + token }
   })
   .then((response) => {
-    // console.log(response);
+    console.log(response);
     dispatch(getAllDecksSuccess(response.data))
   })
   .catch((err) => console.log(err))
