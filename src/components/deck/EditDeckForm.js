@@ -4,27 +4,28 @@ import './DeckForm.css';
 import DeckFormInputs from './DeckFormInputs';
 import Input from '../input/input';
 import {required, nonEmpty} from '../input/validators';
-import {createDeck} from '../../actions/index'
 import requiresLogin from '../requires-login';
 import {connect} from 'react-redux';
 import {editDeck} from '../../actions/index'
-
+import {deleteDeck} from '../../actions/index'
 
 
 
 export class EditDeckForm extends React.Component {
 
   onSubmit(values) {
-    console.log(values);
     const deck = Object.assign({}, values);
-    console.log(deck)
     this.props.dispatch(editDeck(deck));
     this.props.history.push(`/dashboard`);
+  }
 
+  onClick() {
+    const deckId = this.props.initialValues._id;
+    this.props.dispatch(deleteDeck(deckId));
+    this.props.history.push(`/dashboard`);
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="create-flashdeck">
         <h2>Edit Deck</h2>
@@ -52,13 +53,14 @@ export class EditDeckForm extends React.Component {
           }>
          Submit Changes
         </button>
-        <button
+      </form>
+      <button
           type="submit"
+          onClick= { () => this.onClick()}
           className="create-card-btn delete"
           >
           Delete Deck
         </button>
-      </form>
       </div>
 
     )

@@ -15,7 +15,7 @@ export class Dashboard extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const userDecks = this.props.decks.filter((deck) => deck.deckAuthor.username == this.props.currentUser.username);
     // console.log(userDecks);
     const userDeckPortals = userDecks.map((deck, index) => {
@@ -69,4 +69,6 @@ const mapStateToProps = state => ({
 });
 
 export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+
+
 

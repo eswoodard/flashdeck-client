@@ -8,7 +8,7 @@ import {withRouter} from 'react-router-dom';
 
 
 const SignedInLinks = (props) =>  {
-    console.log("dashboard", props)
+    // console.log("dashboard", props)
     return (
         <ul className="nav-links">
             <li className="links"><NavLink to='/create-deck'>+Create Deck</NavLink></li>

@@ -8,19 +8,14 @@ import {createDeck} from '../../actions/index'
 import requiresLogin from '../requires-login';
 
 
-
 export class CreateDeckForm extends React.Component {
   onSubmit(values) {
-    // console.log(values);
     const deck = Object.assign({}, values);
-    // console.log(deck);
     this.props.dispatch(createDeck(deck));
     this.props.history.push('/dashboard');
   }
 
   render() {
-
-
     return (
       <div className="create-flashdeck">
         <h2>Create Your FlashDeck</h2>
@@ -61,8 +56,6 @@ export class CreateDeckForm extends React.Component {
   }
   }
 
-
-
 export default requiresLogin()(reduxForm({
   form: 'create-deck-form',
   initialValues: {
@@ -70,9 +63,6 @@ export default requiresLogin()(reduxForm({
       {}
     ]
   }
-  // onSubmitFail: (errors, dispatch) =>
-  //   dispatch(focus('create-deck-form', Object.keys(errors)[0]))
 })(CreateDeckForm));
-
 
 

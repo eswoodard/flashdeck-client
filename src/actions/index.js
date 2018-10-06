@@ -3,7 +3,7 @@ import {API_BASE_URL} from '../config';
 
 export const CREATE_DECK = 'CREATE_DECK';
 export const createDeck = (deck) => (dispatch, getState) => {
-  console.log(deck);
+  // console.log(deck);
   const token = getState().auth.authToken;
   axios.post(`${API_BASE_URL}/create-deck`, deck, {
     headers: { Authorization: "Bearer " + token }
@@ -29,7 +29,7 @@ export const getAllDecks = () => (dispatch, getState) => {
     headers: { Authorization: "Bearer " + token }
   })
   .then((response) => {
-    console.log(response);
+    // console.log(response);
     dispatch(getAllDecksSuccess(response.data))
   })
   .catch((err) => console.log(err))
@@ -64,58 +64,38 @@ export const getDeckByIdSuccess = (deck) => ({
 
 export const EDIT_DECK = 'EDIT_DECK';
 export const editDeck = (deck) => (dispatch, getState) => {
-  console.log(deck);
+  // console.log(deck);
   const deckId = deck._id;
   const token = getState().auth.authToken;
   axios.put(`${API_BASE_URL}/deck/${deckId}`, deck, {
     headers: { Authorization: "Bearer " + token }
   })
-  .then((response) => dispatch(editDeckSuccess(response.data)))
+  .then((response) => {
+    dispatch(editDeckSuccess(response.data))})
   .catch((err) => console.log(err))
 };
 
 
 export const EDIT_DECK_SUCCESS = 'EDIT_DECK_SUCCESS';
-export const editDeckSuccess = (deck) => ({
+export const editDeckSuccess = (decks) => ({
   type: EDIT_DECK_SUCCESS,
-  deck,
+  decks,
+})
+
+export const DELETE_DECK = 'DELETE_DECK'
+export const deleteDeck = (deckId) => (dispatch, getState) => {
+  const token = getState().auth.authToken;
+  axios.delete(`${API_BASE_URL}/deck/${deckId}`, {
+    headers: { Authorization: "Bearer " + token}
+  })
+  .then((response) => dispatch(deleteDeckSuccess(response.data)))
+  .catch((err) => console.log(err))
+}
+
+export const DELETE_DECK_SUCCESS = 'DELETE_DECK_SUCCESS';
+export const deleteDeckSuccess = (decks) => ({
+  type: DELETE_DECK_SUCCESS,
+  decks
 })
 
 
-
-
-
-// export const LOAD_DECK_DATA = 'LOAD_DECK_DATA';
-// export const loadDeckData = (deck) => {
-//   type: LOAD_DECK_DATA,
-//   deck
-// }
-
-
-
-// export const EDIT_DECK = 'EDIT_DECK';
-// export const editDeck = (deck) => (dispatch, getState) => {
-//   console.log(deck);
-//   const token = getState().auth.authToken;
-//   axios.put(`${API_BASE_URL}/edit-deck`, deck, {
-//     headers: { Authorization: "Bearer " + token }
-//   })
-//   .then((response) => dispatch(createDeckSuccess(response.data)))
-//   .catch((err) => console.log(err))
-// };
-
-
-// export const CREATE_DECK_SUCCESS = "CREATE_DECK_SUCCESS";
-// export const createDeckSuccess = (deck) => ({
-//   type: CREATE_DECK_SUCCESS,
-//   deck,
-// })
-
-
-// export const ADD_CARD = 'ADD_CARD';
-// export const addCard = (term, definition, cardName) => ({
-//   type: ADD_CARD,
-//   term,
-//   definition,
-//   cardName,
-// });

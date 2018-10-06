@@ -6,7 +6,7 @@ import SignedInLinks from './SignedInLinks';
 import './Nav.css';
 
 const Nav = (props) =>  {
-  console.log(props);
+  // console.log(props);
 
     return (
       <nav>
@@ -23,7 +23,7 @@ const Nav = (props) =>  {
 
 
 const mapStateToProps = state => {
-  console.log(state);
+  // console.log(state);
   return {
     currentUser: state.auth.currentUser,
   }
