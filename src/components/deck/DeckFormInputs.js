@@ -15,8 +15,9 @@ const DeckFormInputs = ({ fields }) => (
           title="Remove Field"
           onClick={() => fields.remove(index)}
         >
-        <i className="material-icons">
-        delete</i>
+        <i className="fas fa-trash"></i>
+        {/* <i className="material-icons">
+        delete</i> */}
         </button>
         <p>{index + 1}</p>
         <Field

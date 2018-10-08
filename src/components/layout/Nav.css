@@ -24,13 +24,17 @@ nav {
 }
 
 .nav-links {
-  display: flex;
+  /* display: flex; */
   margin-right: 20px;
 }
 
+.fa-bars {
+  border: none;
+}
 
 
 @media (min-width: 768px) {
+
 
   nav {
     font-size: 20px;
@@ -38,6 +42,14 @@ nav {
 
   .links {
     font-size: 20px;
+  }
+
+}
+
+@media (min-width: 1080px) {
+
+  .nav-links {
+    display: flex;
   }
 
 }
