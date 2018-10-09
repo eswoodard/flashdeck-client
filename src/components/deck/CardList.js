@@ -6,12 +6,13 @@ const CardList = (props) =>  {
     return (
 
       <div className="deck-card">
-        <p className="card-number">{props.number+1}</p>
+        <p className="card-number">#{props.number+1}</p>
         <div className="term-container">
-          <p>{props.term}</p>
+          <p><span className="label">Term: </span>{props.term}</p>
         </div>
+        <div className="card-list-vertical vertical"></div>
         <div className="definition-container">
-            <p>{props.definition}</p>
+            <p><span className="label">Definition: </span>{props.definition}</p>
         </div>
       </div>
 

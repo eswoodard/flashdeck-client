@@ -12,18 +12,20 @@
 }
 
 .form-input {
-  width: 250px;
+  width: 200px;
   /* height: 50px; */
   border: none;
   border-bottom: 3px solid #7C7F7F;
   font-size: 16px;
+  margin-bottom: 15px;
 }
 
 .title, .term, .definition {
   border: none;
-  width: 250px;
-  font-size: 20px;
+  width: 200px;
+  font-size: 16px;
   background-color: #E5E4E5;
+  height: 18px;
 
 }
 
@@ -33,25 +35,36 @@
 
 .add-card {
   width: 120px;
-  border-bottom: 3px solid #5C5B5C;
   background-color: #E5E4E5;
   font-size: 16px;
+  border: none;
+  border-bottom: 3px solid #5C5B5C;
 
+}
+
+.add-card-container {
+  margin-top: 30px;
+  text-align: center;
 }
 
 .card-input-container, .remove-btn {
   border: none;
-  background-color: #E5E4E5
+  background-color: #E5E4E5;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
+.remove-btn {
+  margin-top: 20px;
+}
 
 .remove-btn i {
   border: none;
-  color: #5C5B5C
+  color: #5C5B5C;
 }
 
 .deck-item p {
-  font-size: 22px;
+  font-size: 20px;
   color: #5C5B5C;
 }
 
@@ -64,13 +77,13 @@
 }
 
 .deck-item > div {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   margin-left: auto;
   margin-right: auto;
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: center; */
   padding: 30px;
   background-color:#E5E4E5;
   max-width: 1200px;
@@ -85,24 +98,38 @@ p {
 }
 
 .create-card-btn {
-
   height: 50px;
-  width: 200px;
+  width: 125px;
   border: none;
-  font-size: 20px;
+  font-size: 16px;
   background-color: #E5E4E5;
-  float: right;
-  margin-top: 40px;
-  margin-bottom: 50px;
+  margin-top: 30px;
 }
 
-.delete {
+/* .delete {
   margin-right: 10px;
+} */
+
+.form-submit-btn-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 .fa-trash {
   font-size: 20px;
 }
+
+@media (min-width: 375px) {
+  .title, .term, .definition {
+    width: 250px;
+  }
+
+  .form-input {
+    width: 250px;
+  }
+}
+
 
 @media (min-width: 768px) {
 
@@ -115,11 +142,10 @@ p {
   }
 
   .form-input {
-    width: 450px;
+    width: 600px;
     /* height: 50px; */
-    border: none;
-    border-bottom: 3px solid #7C7F7F;
     font-size: 20px;
+    margin-bottom: 20px;
   }
 
   .title-text {
@@ -127,12 +153,116 @@ p {
   }
 
   .title, .term, .definition {
-    width: 450px;
+    width: 600px;
     font-size: 20px;
   }
 
   .add-card {
     font-size: 18px;
   }
+
+  .deck-item > div {
+    margin-left: auto;
+    margin-right: auto;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; */
+    padding: 30px;
+    background-color:#E5E4E5;
+    max-width: 1200px;
+    margin-bottom: 30px;
+  }
+
+  .deck-item p {
+    font-size: 22px;
+  }
+
+  .remove-btn {
+    margin-top: 0px;
+  }
+
+  .add-card-container {
+    margin-top: 0;
+  }
+
+  .card-input-container{
+    margin-bottom: 0;
+  }
+
+  .create-card-btn {
+    height: 50px;
+    width: 200px;;
+    font-size: 20px;
+    float: right;
+  }
+
+}
+
+@media (min-width: 960px) {
+
+  .deck-item > div {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; */
+    padding: 30px;
+    background-color:#E5E4E5;
+    width: 800px;
+  }
+
+  /* .title, .term, .definition {
+    width: 450px;
+    font-size: 20px;
+  } */
+
+  /* .form-input {
+    width: 450px;
+    font-size: 20px;
+    margin-bottom: 0;
+  } */
+
+  /* .create-card-btn {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  } */
+
+}
+
+@media (min-width: 1200px) {
+
+  .deck-item > div {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+    background-color:#E5E4E5;
+    max-width: 1200px;
+  }
+
+  .title, .term, .definition {
+    width: 450px;
+    font-size: 20px;
+  }
+
+  .form-input {
+    width: 450px;
+    /* height: 50px; */
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+
+  .create-card-btn {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
 
 }

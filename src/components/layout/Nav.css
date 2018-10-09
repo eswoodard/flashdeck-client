@@ -5,7 +5,7 @@ nav {
   align-items: baseline;
   padding-left: 20px;
   padding-right: 20px;
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   font-size: 15px;
   height: 80px;
@@ -32,24 +32,41 @@ nav {
   border: none;
 }
 
+@media (min-width: 540px){
+
+  nav {
+    font-size: 18px;
+  }
+}
 
 @media (min-width: 768px) {
 
 
   nav {
-    font-size: 20px;
+    font-size: 22px;
   }
-
   .links {
-    font-size: 20px;
+    font-size: 22px;
   }
 
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 960px) {
 
   .nav-links {
     display: flex;
+  }
+
+}
+
+@media (min-width: 1500px) {
+
+  nav {
+    font-size: 24px;
+  }
+
+  .links {
+    font-size: 24px;
   }
 
 }

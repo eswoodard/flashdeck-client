@@ -2,8 +2,8 @@
   /* margin-top: 75px; */
   /* padding-top: 20px; */
   width: 50%;
-  height: 55px;
-  font-size: 16px;
+  height: 40px;
+  font-size: 15px;
   border: none;
   background-color: #E5E4E5;
   /* padding-bottom: 20px; */
@@ -12,8 +12,8 @@
 
 .dashboard-btn {
   width: 50%;
-  height: 55px;
-  font-size: 16px;
+  height: 40px;
+  font-size: 14px;
   margin-top: 25px;
   border: none;
   background-color: #E5E4E5
@@ -24,8 +24,8 @@
   height: 1px;
   border: 0;
   border-top: 1px solid #7C7F7F;
-  margin-top: 75px;
-  margin-bottom: 75px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -65,7 +65,7 @@
 }
 
 .topic {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .container {
@@ -82,6 +82,9 @@
   align-content: center;
 } */
 
+.flashdecks {
+  margin-top: 50px;
+}
 
 .flashdeck-summary-container {
   display: flex;
@@ -92,15 +95,25 @@
   padding-right: 25px;
   padding-left: 25px;
   padding-top: 5px;
-  width: 475px;
-  height: 175px;
+  width: 350px;
+  /* max-width: 350px; */
+  height: 150px;
   margin: 30px;
+  margin-bottom: 5px;
 }
 
-h2 {
+.user-flashdecks h2  {
   text-align: center;
   padding-top: 30px;
-  font-size: 30px;
+  font-size: 18px;
+}
+
+.other-flashdecks h2 {
+  padding-top: none;
+  margin-top: none;
+  text-align: center;
+  font-size: 18px;
+
 }
 
 .button-container {
@@ -117,6 +130,7 @@ h2 {
 @media (min-width: 768px) {
   .flashdeck-summary-container {
     height: 250px;
+    width: 500px;
   }
 
   .topic {
@@ -129,7 +143,7 @@ h2 {
   }
 
   .summary-item {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .break {
@@ -140,4 +154,35 @@ h2 {
     display: inline-block;
   }
 
+  .user-flashdecks h2, .other-flashdecks h2 {
+    padding-top: 30px;
+    font-size: 30px;
+  }
+
+  .button-container button {
+    height: 55px;
+    font-size: 20px;
+  }
+
+  .hr1 {
+    margin-top: 75px;
+    margin-bottom: 75px;
+  }
+
+  .dashboard-btn {
+    height: 55px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 960px){
+
+  .flashdeck-summary-container {
+    height: 300px;
+    width: 600px;
+  }
+
+  .button-container button, .summary-item, .dashboard-btn {
+    font-size: 24px;
+  }
 }

@@ -7,6 +7,7 @@
 .lp-header h2 {
   padding-top: 50px;
   font-size: 20px;
+  text-align: center;
 
 }
 
@@ -14,7 +15,7 @@
   margin-top: 30px;
   padding: 10px;
   width: 150px;
-  height: 40px;
+  /* height: 40px; */
   font-size: 18px;
   text-decoration: none;
   background-color: #BABEBF;
@@ -91,6 +92,29 @@ section {
 
   .lp-section p {
     font-size: 20px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+
+  .lp-header h2 {
+    font-size: 40px;
+
+  }
+
+  .lp-btn {
+    margin-top: 75px;
+    font-size: 24px;
+    padding: 15px;
+  }
+
+  .lp-section h3 {
+    font-size: 40px;
+  }
+
+  .lp-section p {
+    font-size: 24px;
   }
 
 

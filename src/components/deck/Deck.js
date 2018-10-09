@@ -47,7 +47,7 @@ export class Deck extends React.Component  {
               <header>
                 <p>{this.props.currentDeck.deckCards.length} cards in deck</p>
               </header>
-              <p className="instructions">Click card to flip it. Put a star on cards that need more practice.</p>
+              <p className="instructions">Click card to flip it.</p>
         </div>
         <Slider {...sliderSettings}>
           {cards}
@@ -60,7 +60,7 @@ export class Deck extends React.Component  {
         <hr className="hr1"/>
         <div className="card-list-container">
         <div className="deck-list-header">
-              <h3>{this.props.currentDeck.deckCards.length} Terms in this deck</h3>
+              <h3>{this.props.currentDeck.deckCards.length} Cards in this deck</h3>
               {/* <select name="card-drop-down" id="card-drop-down">
                 <option value="original">All</option>
                 <option value="starred">Starred</option>
@@ -68,7 +68,7 @@ export class Deck extends React.Component  {
             </div>
             {cardList}
             <div className="quiz-button-container">
-                  <button className="edit-btn" onClick= { () => this.props.history.push('/edit-deck')}>Add or Remove Terms</button>
+                  <button className="edit-btn" onClick= { () => this.props.history.push('/edit-deck')}>Edit This Deck</button>
                 </div>
           </div>
         </div>

@@ -30,7 +30,7 @@ export class Nav extends React.Component {
 
   navigationLinks() {
     return (
-      <div>
+      <div className="resLinks">
         {this.props.currentUser ?
           <SignedInLinks  />
           : <SignedOutLinks />
@@ -54,7 +54,7 @@ export class Nav extends React.Component {
   }
 
   renderNavigation() {
-    if(this.state.windowWidth <= 1080) {
+    if(this.state.windowWidth <= 960) {
       return (
         <div className="mobile_nav">
           <p onClick={this.handleNavClick.bind(this)}><i className="fas fa-bars"></i></p>{this.renderMobileNav()}
