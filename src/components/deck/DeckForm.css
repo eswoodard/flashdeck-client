@@ -12,8 +12,7 @@
 }
 
 .form-input {
-  width: 200px;
-  /* height: 50px; */
+  width: 90%;
   border: none;
   border-bottom: 3px solid #7C7F7F;
   font-size: 16px;
@@ -22,7 +21,7 @@
 
 .title, .term, .definition {
   border: none;
-  width: 200px;
+  width: 90%;
   font-size: 16px;
   background-color: #E5E4E5;
   height: 18px;
@@ -77,16 +76,11 @@
 }
 
 .deck-item > div {
-  /* margin-top: 50px; */
   margin-left: auto;
   margin-right: auto;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center; */
   padding: 30px;
   background-color:#E5E4E5;
-  max-width: 1200px;
+  max-width: 1100px;
 }
 
 .definition-container {
@@ -106,30 +100,20 @@ p {
   margin-top: 30px;
 }
 
-/* .delete {
-  margin-right: 10px;
-} */
-
 .form-submit-btn-container {
   display: flex;
   flex-flow: column;
   align-items: center;
 }
 
+.delete {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .fa-trash {
   font-size: 20px;
 }
-
-@media (min-width: 375px) {
-  .title, .term, .definition {
-    width: 250px;
-  }
-
-  .form-input {
-    width: 250px;
-  }
-}
-
 
 @media (min-width: 768px) {
 
@@ -142,8 +126,6 @@ p {
   }
 
   .form-input {
-    width: 600px;
-    /* height: 50px; */
     font-size: 20px;
     margin-bottom: 20px;
   }
@@ -153,7 +135,6 @@ p {
   }
 
   .title, .term, .definition {
-    width: 600px;
     font-size: 20px;
   }
 
@@ -164,10 +145,6 @@ p {
   .deck-item > div {
     margin-left: auto;
     margin-right: auto;
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center; */
     padding: 30px;
     background-color:#E5E4E5;
     max-width: 1200px;
@@ -205,34 +182,40 @@ p {
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center; */
     padding: 30px;
     background-color:#E5E4E5;
     width: 800px;
   }
 
-  /* .title, .term, .definition {
-    width: 450px;
-    font-size: 20px;
-  } */
-
-  /* .form-input {
-    width: 450px;
-    font-size: 20px;
-    margin-bottom: 0;
-  } */
-
-  /* .create-card-btn {
-    margin-top: 40px;
-    margin-bottom: 50px;
-  } */
-
 }
 
 @media (min-width: 1200px) {
+
+  .remove-btn {
+    margin-bottom: 0px;
+  }
+
+  .create-flashdeck h2 {
+    font-size:30px;
+  }
+
+  .form-input {
+    width: 450px;
+    font-size: 16px;
+  }
+
+  .title, .term, .definition {
+    width: 450px;
+  }
+
+  .card-input-container, .remove-btn {
+    border: none;
+    background-color: #E5E4E5
+  }
+
+  .visibility-box {
+    float: right;
+  }
 
   .deck-item > div {
     margin-top: 50px;
@@ -245,29 +228,25 @@ p {
     padding: 30px;
     background-color:#E5E4E5;
     max-width: 1200px;
-  }
-
-  .title, .term, .definition {
-    width: 450px;
-    font-size: 20px;
-  }
-
-  .form-input {
-    width: 450px;
-    /* height: 50px; */
-    font-size: 20px;
-    margin-bottom: 0;
+    width: 1200px;
   }
 
   .create-card-btn {
+    width: 250px;
+    font-size: 20px;
     margin-top: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+
   }
 
-  .definition-container {
-    float: right;
+  .delete {
+    margin-top: 0px;
+    width: 250px;
+
   }
 
-
+  .form-submit-btn-container {
+    min-width: 1100px;
+  }
 
 }

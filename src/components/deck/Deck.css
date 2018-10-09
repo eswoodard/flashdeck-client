@@ -109,12 +109,6 @@ header p {
   font-size: 15px;
 }
 
-
-.deck-navigation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .count {
   padding-left: 20px;
   padding-right: 20px;
@@ -299,10 +293,16 @@ header p {
   .deck-list-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    /* margin-left: 200px;
-    margin-right: 200px; */
+    justify-content: space-between;
+    /* flex-flow: column; */
+    margin-left: 10%;
+    margin-right: 10%;
+
   }
+
+  /* .deck-list-header input {
+    align-self: unset;
+  } */
 
   .deck-card {
     display: flex;

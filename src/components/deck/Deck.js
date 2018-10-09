@@ -11,6 +11,15 @@ import Slider from 'react-slick';
 
 export class Deck extends React.Component  {
 
+  state = {
+    checked: false,
+  }
+
+  handleChange =() => {
+    this.setState({ checked: !this.state.checked})
+  }
+
+
 
  componentDidMount() {
     this.props.dispatch(getDeckById(this.props.match.params.id));
@@ -52,11 +61,6 @@ export class Deck extends React.Component  {
         <Slider {...sliderSettings}>
           {cards}
         </Slider>
-        {/* <DeckNavigation cardNumber={this.props.currentDeck.deckCards.length}/>
-        <div className="quiz-button-container">
-              <p>Think you're ready?</p>
-              <button className="take-quiz-btn">Take Quiz</button>
-        </div> */}
         <hr className="hr1"/>
         <div className="card-list-container">
         <div className="deck-list-header">
@@ -65,8 +69,15 @@ export class Deck extends React.Component  {
                 <option value="original">All</option>
                 <option value="starred">Starred</option>
             </select> */}
-            </div>
-            {cardList}
+              <div className="pretty p-default p-thick">
+                <input type="checkbox" checked={this.state.checked} onChange={this.handleChange} />
+                <div className="state">
+                  <label>Hide Cards</label>
+                </div>
+              </div>
+        </div>
+            {this.state.checked ? null : <div>{cardList}</div>}
+            {/* {cardList} */}
             <div className="quiz-button-container">
                   <button className="edit-btn" onClick= { () => this.props.history.push('/edit-deck')}>Edit This Deck</button>
                 </div>

@@ -32,8 +32,8 @@ export class Nav extends React.Component {
     return (
       <div className="resLinks">
         {this.props.currentUser ?
-          <SignedInLinks  />
-          : <SignedOutLinks />
+          <SignedInLinks onClick={this.handleNavClick} />
+          : <SignedOutLinks onClick={this.handleNavClick}/>
           }
      </div>
     )
@@ -45,7 +45,7 @@ export class Nav extends React.Component {
     }
   }
 
-  handleNavClick() {
+  handleNavClick =() => {
     if(!this.state.mobileNavVisible) {
       this.setState({mobileNavVisible: true});
     } else {
@@ -57,7 +57,7 @@ export class Nav extends React.Component {
     if(this.state.windowWidth <= 960) {
       return (
         <div className="mobile_nav">
-          <p onClick={this.handleNavClick.bind(this)}><i className="fas fa-bars"></i></p>{this.renderMobileNav()}
+          <p onClick={this.handleNavClick}><i className="fas fa-bars"></i></p>{this.renderMobileNav()}
         </div>
       );
     } else {
