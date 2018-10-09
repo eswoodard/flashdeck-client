@@ -25,14 +25,13 @@ export class Dashboard extends React.Component {
     })
 
     const memberDecks = this.props.decks.filter((deck) => deck.deckAuthor.username !== this.props.currentUser.username);
-    // console.log(memberDecks);
+    console.log(memberDecks);
     const memberDeckPortals = memberDecks.map((deck, index) => {
-      // console.log(deck);
       return (
         <DeckPortal deck={deck} dispatch={this.props.dispatch} key={index}/>
       )
     })
-    // console.log(userDeckPortals);
+    console.log(memberDeckPortals);
 
     return (
       <div className="flashdecks">
@@ -49,7 +48,7 @@ export class Dashboard extends React.Component {
                 <hr className="hr1 last-hr"/>
         </div>
         <div className="other-flashdecks">
-          <h2>Member FlashDecks</h2>
+          <h2>Community FlashDecks</h2>
           <div className="flashdeck container">
             {memberDeckPortals}
           </div>

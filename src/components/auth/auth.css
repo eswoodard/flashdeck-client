@@ -13,7 +13,7 @@
 }
 
 .modal-signup {
-  height: 400px;
+  height: 415px;
 }
 
 .sign-in, .signup-form {
@@ -50,7 +50,7 @@
   font-size: 14px;
 }
 .sign-in button, .signup-form button {
-  margin-top: 30px;
+  margin-top: 10px;
   padding: 5px;
   width: 150px;
   font-size: 16px;
@@ -58,8 +58,12 @@
 
 .sign-in p, .signup-form p {
   font-size: 14px;
-  padding-top: 10px;
+  /* padding-top: 10px; */
   text-align: center;
+}
+
+.sign-in p {
+  padding-top: 10px;
 }
 
 .sign-in-up-input {
@@ -90,7 +94,7 @@
   }
 
   .modal-signup {
-    height: 450px;
+    height: 500px;
   }
 
 }
@@ -98,7 +102,7 @@
 @media (min-width: 768px) {
 
   .modal-container {
-    margin-top: 30%;
+    margin-top: 20%;
   }
 
   .modal-login, .modal-signup {
@@ -115,12 +119,12 @@
 
   .signup-form input {
     width: 250px;
-    height: 30px;
+    height: 25px;
     margin-bottom: 5px;
   }
 
   .sign-in-up-input {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .modal-signup {
@@ -140,6 +144,8 @@
 
   .signup-form button, .sign-in button {
     font-size: 20px;
+    margin-top: 10px;
+    width: 200px;
   }
 
   .sign-in p, .signup-form p {

@@ -8,7 +8,6 @@ import {getDeckById} from '../../actions/index';
 import Slider from 'react-slick';
 
 
-
 export class Deck extends React.Component  {
 
   state = {
@@ -19,9 +18,7 @@ export class Deck extends React.Component  {
     this.setState({ checked: !this.state.checked})
   }
 
-
-
- componentDidMount() {
+    componentDidMount() {
     this.props.dispatch(getDeckById(this.props.match.params.id));
   }
 
@@ -79,8 +76,12 @@ export class Deck extends React.Component  {
             {this.state.checked ? null : <div>{cardList}</div>}
             {/* {cardList} */}
             <div className="quiz-button-container">
+              {console.log(this.props)}
+              {this.props.currentDeck.deckAuthor !== this.props.currentUser.id ? null :
                   <button className="edit-btn" onClick= { () => this.props.history.push('/edit-deck')}>Edit This Deck</button>
+              }
                 </div>
+
           </div>
         </div>
     )
@@ -91,7 +92,8 @@ export class Deck extends React.Component  {
 }
 
 const mapStateToProps = state => ({
-  currentDeck: state.flashDecks.currentDeck
+  currentDeck: state.flashDecks.currentDeck,
+  currentUser: state.auth.currentUser
 });
 
 export default connect(mapStateToProps)(Deck);

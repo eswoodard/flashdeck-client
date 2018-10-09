@@ -3,7 +3,7 @@ import {API_BASE_URL} from '../config';
 
 export const CREATE_DECK = 'CREATE_DECK';
 export const createDeck = (deck) => (dispatch, getState) => {
-  // console.log(deck);
+  console.log(deck);
   const token = getState().auth.authToken;
   axios.post(`${API_BASE_URL}/create-deck`, deck, {
     headers: { Authorization: "Bearer " + token }

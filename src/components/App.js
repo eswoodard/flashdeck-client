@@ -15,7 +15,7 @@ import Quiz from './quiz/Quiz';
 import './App.css';
 
 
-class App extends Component {
+export class App extends Component {
   componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {
         // this.startPeriodicRefresh();

@@ -22,6 +22,7 @@ export class Nav extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize.bind(this));
+    // this.renderNavigation;
   }
 
   componentWillUnmount() {
