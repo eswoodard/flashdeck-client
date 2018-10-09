@@ -14,9 +14,14 @@
 .form-input {
   width: 90%;
   border: none;
-  border-bottom: 3px solid #7C7F7F;
+  border-bottom: 3px solid #0A586B;
   font-size: 16px;
   margin-bottom: 15px;
+}
+
+input::placeholder {
+  color: #CACBD0;
+  font-family: 'Proza Libre', sans-serif;
 }
 
 .title, .term, .definition {

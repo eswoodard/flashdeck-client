@@ -12,7 +12,7 @@ import CreateDeckForm from './deck/CreateDeckForm';
 import EditDeckForm from './deck/EditDeckForm';
 import Deck from './deck/Deck';
 import Quiz from './quiz/Quiz';
-import './App.css';
+
 
 
 export class App extends Component {

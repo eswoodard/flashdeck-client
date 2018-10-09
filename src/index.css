@@ -10,18 +10,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #BABEBF;
+  background-color: #057191;
   height: 100%;
+  color: #33363b;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 main {
-  background-color: #FFFEFF;
+  background-color: #f5f5f5;
   width: 95%;
   max-width: 1600px;
   margin: 0 auto;
   height: 100%;
   overflow: scroll;
-  padding-top: 75px;
+  /* padding-top: 75px; */
 }
 
 div#root {
