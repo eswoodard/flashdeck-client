@@ -264,5 +264,10 @@ p {
     margin-bottom: 50px;
   }
 
+  .definition-container {
+    float: right;
+  }
+
+
 
 }
