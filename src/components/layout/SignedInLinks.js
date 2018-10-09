@@ -10,9 +10,9 @@ import {withRouter} from 'react-router-dom';
 const SignedInLinks = (props) =>  {
     // console.log("dashboard", props)
     return (
-        <ul className="nav-links">
-            <li className="links"><NavLink to='/create-deck'>+Create Deck</NavLink></li>
-            <li className="links"><NavLink to='/dashboard' action={props.history.push('/dashboard')}>Dashboard</NavLink></li>
+        <ul className="nav-links right hide-on-med-and-down" id="nav-mobile">
+            <li className="links" onClick={props.onClick}><NavLink to='/create-deck'>+Create Deck</NavLink></li>
+            <li className="links" onClick={props.onClick}><NavLink to='/dashboard' action={props.history.push('/dashboard')}>Dashboard</NavLink></li>
             <li className="links"><NavLink to='/' onClick={props.signOut}>Log Out</NavLink></li>
         </ul>
     )

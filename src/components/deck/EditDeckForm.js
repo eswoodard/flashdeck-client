@@ -45,22 +45,26 @@ export class EditDeckForm extends React.Component {
         <FieldArray name="deckCards" component={DeckFormInputs} />
         <div className="deck-item">
         </div>
+       <div className="form-submit-btn-container">
         <button
-          type="submit"
-          className="create-card-btn"
-          disabled={
-            this.props.pristine || this.props.submitting
-          }>
-         Submit Changes
-        </button>
+            type="submit"
+            className="create-card-btn"
+            disabled={
+              this.props.pristine || this.props.submitting
+            }>
+          Submit Changes
+          </button>
+       </div>
       </form>
-      <button
+      <div className="form-submit-btn-container">
+        <button
           type="submit"
           onClick= { () => this.onClick()}
           className="create-card-btn delete"
           >
           Delete Deck
         </button>
+      </div>
       </div>
 
     )

@@ -34,21 +34,24 @@ export class CreateDeckForm extends React.Component {
         <FieldArray name="deckCards" component={DeckFormInputs} />
         <div className="deck-item">
         </div>
-        <button
-          type="submit"
-          className="create-card-btn"
-          disabled={
-            this.props.pristine || this.props.submitting
-          }>
-         Create Deck
-        </button>
-        <button
-          type="submit"
-          className="create-card-btn delete"
-          onSubmit={()=>this.props.history.push('/dashboard')}
-          >
-          Cancel
-        </button>
+        <div className="form-submit-btn-container">
+          <button
+            type="submit"
+            className="create-card-btn"
+            disabled={
+              this.props.pristine || this.props.submitting
+            }>
+          Create Deck
+          </button>
+          <button
+            type="submit"
+            className="create-card-btn delete"
+            onSubmit={()=>this.props.history.push('/dashboard')}
+            >
+            Cancel
+          </button>
+        </div>
+
       </form>
       </div>
 

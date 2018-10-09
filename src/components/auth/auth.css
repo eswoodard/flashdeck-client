@@ -23,6 +23,9 @@
   align-items: center;
 }
 
+.signup-form h3{
+  margin: 20px;
+}
 
 .sign-in label, .signup-form label {
   padding: 5px;
@@ -40,10 +43,11 @@
 
 .x-out {
   position: absolute;
-  top: 2px;
-  right: 8px;
+  top: 7px;
+  right: 7px;
   text-decoration: none;
-  color: rgb(56, 53, 53)
+  color: rgb(56, 53, 53);
+  font-size: 14px;
 }
 .sign-in button, .signup-form button {
   margin-top: 30px;
@@ -55,28 +59,46 @@
 .sign-in p, .signup-form p {
   font-size: 14px;
   padding-top: 10px;
+  text-align: center;
 }
 
 .sign-in-up-input {
   background-color: #ccc;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
+
 }
 
-.sign-in div.form-input {
-  width: 225px;
-  /* padding: 15px; */
+.sign-in div.form-input, .signup-form div.form-input {
+  width: 200px;
+  margin-top: 10px;
 }
 
-.signup-form div.form-input {
-  width: 225px;
+@media (min-width: 540px) {
+
+  .sign-up-form h3{
+    margin: 20px;
+  }
+
+  .sign-in-up-input {
+    font-size: 18px;
+  }
+
+  .sign-in div.form-input, .signup-form div.form-input {
+    width: 250px;
+    margin-top: 20px;
+  }
+
+  .modal-signup {
+    height: 450px;
+  }
 
 }
 
 @media (min-width: 768px) {
 
   .modal-container {
-    margin-top: 15%;
+    margin-top: 30%;
   }
 
   .modal-login, .modal-signup {
@@ -104,4 +126,24 @@
   .modal-signup {
     height: 600px;
   }
+
+  .x-out {
+    top: 8px;
+    right: 8px;
+    font-size: 18px;
+  }
+
+  .signup-form h3, .sign-in h3{
+    margin: 22px;
+    font-size: 22px;
+  }
+
+  .signup-form button, .sign-in button {
+    font-size: 20px;
+  }
+
+  .sign-in p, .signup-form p {
+    font-size: 18px;
+  }
 }
+

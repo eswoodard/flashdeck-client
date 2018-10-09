@@ -17,8 +17,8 @@ const DeckPortal = (props) =>  {
       <p className="topic">{props.deck.deckTitle}</p>
       <div className="button-container">
         <button onClick= { () => props.history.push(`deck/${props.deck._id}`) }>Study</button>
-        <div className="vertical vertical2"></div>
-        <button>Take Quiz</button>
+        {/* <div className="vertical vertical2"></div>
+        <button>Take Quiz</button> */}
       </div>
     </div>
     )

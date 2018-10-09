@@ -9,15 +9,7 @@ const DeckFormInputs = ({ fields }) => (
   <div className="deck-item">
     {fields.map((deckCard, index) => (
       <div key={index} className="card-input-container">
-        <button
-          className="remove-btn"
-          type="button"
-          title="Remove Field"
-          onClick={() => fields.remove(index)}
-        >
-        <i className="material-icons">
-        delete</i>
-        </button>
+
         <p>{index + 1}</p>
         <Field
           name={`${deckCard}.cardTerm`}
@@ -35,9 +27,19 @@ const DeckFormInputs = ({ fields }) => (
           placeholder="Definition"
           arialabel={`${deckCard}.cardDefinition`}
         />
+        <button
+          className="remove-btn"
+          type="button"
+          title="Remove Field"
+          onClick={() => fields.remove(index)}
+        >
+        <i className="fas fa-trash"></i>
+        {/* <i className="material-icons">
+        delete</i> */}
+        </button>
       </div>
     ))}
-    <div className="deck-item">
+    <div className="deck-item add-card-container">
       <button type="button" className="add-card" onClick={() => fields.push({})}>+Add Card</button>
     </div>
   </div>

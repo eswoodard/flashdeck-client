@@ -10,6 +10,31 @@ footer {
 footer p {
   font-size: 12px;
 }
+footer {
+  background-color: #595B5C;
+  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer i {
+  border: none;
+  padding: 5px;
+}
+
+.credit{
+  margin-right: 10px;
+}
+
+@media (min-width: 540px){
+
+  footer p {
+    font-size: 16px;
+  }
+}
+
 
 @media (min-width: 768px) {
 

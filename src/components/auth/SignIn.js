@@ -37,16 +37,20 @@ export class SignIn extends React.Component {
                name="username"
                component={Input}
                validate={[required, nonEmpty]}
+               placeholder="Username"
+               aria-label="username"
             />
-            <label htmlFor="username">User Name</label>
+            {/* <label htmlFor="username">User Name</label> */}
             <Field
               className="sign-in-up-input"
               type="password"
               name="password"
               component={Input}
               validate={[required, nonEmpty]}
+              placeholder="Password"
+               aria-label="password"
             />
-            <label htmlFor="password">Password</label>
+            {/* <label htmlFor="password">Password</label> */}
             <button
               type="submit"
               disabled={this.props.pristine || this.props.submitting}

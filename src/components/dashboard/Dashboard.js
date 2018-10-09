@@ -44,9 +44,9 @@ export class Dashboard extends React.Component {
             <div className="break"></div>
               <div className="dashboard-btn-container">
                 <button className="dashboard-btn" onClick= { () => this.props.history.push('/create-deck') }>Create Deck</button><br/>
-                <button className="dashboard-btn">See Quiz Scores</button>
+                {/* <button className="dashboard-btn">See Quiz Scores</button> */}
               </div>
-                <hr className="hr1"/>
+                <hr className="hr1 last-hr"/>
         </div>
         <div className="other-flashdecks">
           <h2>Member FlashDecks</h2>

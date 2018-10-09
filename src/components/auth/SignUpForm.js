@@ -31,43 +31,53 @@ export class SignUpForm extends React.Component {
           className="sign-in-up-input"
           name="firstName"
           component={Input}
+          placeholder="First Name"
+          arialabel="firstName"
         />
-        <label htmlFor="firstName">First Name</label>
+        {/* <label htmlFor="firstName"></label> */}
         <Field
           type="text"
           className="sign-in-up-input"
           name="lastName"
           component={Input}
+          placeholder="Last Name"
+          arialabel="lastName"
         />
-        <label htmlFor="lastName">Last Name</label>
+        {/* <label htmlFor="lastName"></label> */}
         <Field
           type="text"
           className="sign-in-up-input"
           name="username"
           component={Input}
           validate={[required, nonEmpty, isTrimmed]}
+          placeholder="Username"
+          arialabel="username"
           />
-        <label htmlFor="username">Username</label>
+        {/* <label htmlFor="username"></label> */}
         <Field
           type="password"
           className="sign-in-up-input"
           name="password"
           component={Input}
           validate={[required, passwordLength, isTrimmed]}
+          placeholder="Password"
+          arialabel="password"
           />
-        <label htmlFor="password">Password</label>
+        {/* <label htmlFor="password"></label> */}
         <Field
           type="password"
           className="sign-in-up-input"
           name="passwordConfirm"
           component={Input}
           validate={[required, nonEmpty, matchesPassword]}
+          placeholder="Confirm Password"
+          arialabel="passwordConfirm"
           />
-        <label htmlFor="passwordConfirm">Confirm Password</label>
+        {/* <label htmlFor="passwordConfirm"></label> */}
         <button
           type="submit"
           disabled={this.props.pristine || this.props.submitting}>Create Account</button>
-        <p>Already have an account? <Link to='/signin'>Click Here</Link></p>
+        <p>Already have an account? <br/><Link to='/signin'>Click Here</Link></p>
       </form>
     )
   }
