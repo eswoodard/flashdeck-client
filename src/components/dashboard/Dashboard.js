@@ -6,8 +6,6 @@ import requiresLogin from '../requires-login';
 import {getAllDecks} from '../../actions/index.js';
 
 
-
-
 export class Dashboard extends React.Component {
 
   componentDidMount() {
@@ -15,9 +13,7 @@ export class Dashboard extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
     const userDecks = this.props.decks.filter((deck) => deck.deckAuthor.username == this.props.currentUser.username);
-    // console.log(userDecks);
     const userDeckPortals = userDecks.map((deck, index) => {
       return (
         <DeckPortal deck={deck} dispatch={this.props.dispatch} key={index}/>
@@ -43,7 +39,6 @@ export class Dashboard extends React.Component {
             <div className="break"></div>
               <div className="dashboard-btn-container">
                 <button className="dashboard-btn" onClick= { () => this.props.history.push('/create-deck') }>Create Deck</button><br/>
-                {/* <button className="dashboard-btn">See Quiz Scores</button> */}
               </div>
                 <hr className="hr1 last-hr"/>
         </div>

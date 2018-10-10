@@ -33,8 +33,8 @@ export class SignUpForm extends React.Component {
           component={Input}
           placeholder="First Name"
           arialabel="firstName"
+          validate={[required, nonEmpty]}
         />
-        {/* <label htmlFor="firstName"></label> */}
         <Field
           type="text"
           className="sign-in-up-input"
@@ -42,8 +42,8 @@ export class SignUpForm extends React.Component {
           component={Input}
           placeholder="Last Name"
           arialabel="lastName"
+          validate={[required, nonEmpty]}
         />
-        {/* <label htmlFor="lastName"></label> */}
         <Field
           type="text"
           className="sign-in-up-input"
@@ -53,7 +53,6 @@ export class SignUpForm extends React.Component {
           placeholder="Username"
           arialabel="username"
           />
-        {/* <label htmlFor="username"></label> */}
         <Field
           type="password"
           className="sign-in-up-input"
@@ -63,7 +62,6 @@ export class SignUpForm extends React.Component {
           placeholder="Password"
           arialabel="password"
           />
-        {/* <label htmlFor="password"></label> */}
         <Field
           type="password"
           className="sign-in-up-input"
@@ -73,7 +71,6 @@ export class SignUpForm extends React.Component {
           placeholder="Confirm Password"
           arialabel="passwordConfirm"
           />
-        {/* <label htmlFor="passwordConfirm"></label> */}
         <button
           type="submit"
           disabled={this.props.pristine || this.props.submitting}>Create Account</button>

@@ -6,10 +6,6 @@ import SignedInLinks from './SignedInLinks';
 import './Nav.css';
 import flashdeckLogo from '../../images/flashdeck-logo.png';
 
-
-
-
-
 export class Nav extends React.Component {
 
   state = {
@@ -23,7 +19,6 @@ export class Nav extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize.bind(this));
-    // this.renderNavigation;
   }
 
   componentWillUnmount() {
@@ -83,19 +78,12 @@ export class Nav extends React.Component {
         </nav>
     )
   }
-
-
-  // console.log(props);
-
-
 }
 
 
 const mapStateToProps = state => {
-  // console.log(state);
   return {
     currentUser: state.auth.currentUser,
   }
-
 }
 export default connect(mapStateToProps)(Nav);

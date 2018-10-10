@@ -3,14 +3,12 @@ import ReactCardFlip from 'react-card-flip';
 import {connect} from 'react-redux';
 
 
-
 export class Card  extends React.Component  {
 
   state = {
     isFlipped: false,
     flipSpeed: 0.2,
     infinite: false,
-
   };
 
   handleClick = (e) => {
@@ -39,9 +37,7 @@ export class Card  extends React.Component  {
           </div>
       </div>
     )
-
   }
-
 }
 
 const mapStateToProps = state => ({

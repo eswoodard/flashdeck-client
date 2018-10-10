@@ -23,7 +23,6 @@ main {
   margin: 0 auto;
   height: 100%;
   overflow: scroll;
-  /* padding-top: 75px; */
 }
 
 div#root {

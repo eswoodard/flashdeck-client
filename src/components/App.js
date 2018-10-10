@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-// import {refreshAuthToken} from '../actions/auth';
 import Nav from './layout/Nav';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LandingPage from './landing-page/LandingPage';
@@ -12,7 +11,6 @@ import CreateDeckForm from './deck/CreateDeckForm';
 import EditDeckForm from './deck/EditDeckForm';
 import Deck from './deck/Deck';
 import Quiz from './quiz/Quiz';
-
 
 
 export class App extends Component {

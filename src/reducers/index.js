@@ -31,12 +31,6 @@ export const flashDeckReducer = (state=initialState, action) => {
   else if(action.type === actions.EDIT_DECK_SUCCESS) {
     console.log(action.decks);
     console.log('deck successfully edited');
-    // const decks = state.decks.slice();
-    // const decks = state.decks.filter((deck) => {
-    //     deck._id == action.deck._id
-    //   })
-    //   console.log(decks);
-    // decks.unshift(action.deck.deck);
     return Object.assign({}, state, {
       decks: [
         ...action.decks
@@ -52,7 +46,6 @@ export const flashDeckReducer = (state=initialState, action) => {
     }
     )
   }
-
 
   return state;
 }

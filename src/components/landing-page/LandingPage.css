@@ -1,6 +1,5 @@
 .lp-header{
   display: flex;
-  /* flex-direction: row; */
   align-items: center;
   background: url(../../images/notebook.jpg);
   background-position: 50%, 0;
@@ -9,7 +8,6 @@
   min-height: 400px;
   padding-left: 20px;
   color: #33363b;
-
 }
 
 .first {
@@ -53,14 +51,12 @@
   padding-top: 120px;
   padding-bottom: 10px;
   font-size: 30px;
-
 }
 
 .lp-btn, .lp-btn2 {
   margin-top: 30px;
   padding: 10px;
   width: 150px;
-  /* height: 40px; */
   font-size: 18px;
   text-decoration: none;
   background-color: #1093B3;
@@ -68,7 +64,6 @@
   text-align: center;
   font-family: 'Proza Libre', sans-serif;
 }
-
 
 .lp-btn2 {
   background-color: #DB755C;
@@ -124,16 +119,12 @@ section {
   }
 
   .middle-sections {
-    /* flex-direction: row; */
     justify-content: space-evenly;
     padding-top: 100px;
-
-
   }
-  .header-text h2 {
-    /* padding-top: 150px; */
-    font-size: 26px;
 
+  .header-text h2 {
+    font-size: 26px;
   }
 
   .lp-section1 h3 {
@@ -155,7 +146,6 @@ section {
 
   .lp-header h2 {
     font-size: 26px;
-
   }
 
   .lp-btn, .lp-btn2 {

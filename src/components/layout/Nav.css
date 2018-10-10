@@ -36,7 +36,6 @@ nav {
 }
 
 .nav-links {
-  /* display: flex; */
   margin-right: 20px;
 }
 
@@ -53,7 +52,6 @@ nav {
 
 @media (min-width: 768px) {
 
-
   nav {
     font-size: 22px;
     height: 80px;
@@ -69,7 +67,6 @@ nav {
   .nav-links {
     display: flex;
   }
-
 }
 
 @media (min-width: 1500px) {
@@ -81,5 +78,4 @@ nav {
   .links {
     font-size: 20px;
   }
-
 }

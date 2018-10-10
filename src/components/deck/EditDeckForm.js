@@ -1,10 +1,9 @@
 import React from 'react';
-import {reduxForm, Field, focus, FieldArray} from 'redux-form';
+import {reduxForm, Field, FieldArray} from 'redux-form';
 import './DeckForm.css';
 import DeckFormInputs from './DeckFormInputs';
 import Input from '../input/input';
 import {required, nonEmpty} from '../input/validators';
-import requiresLogin from '../requires-login';
 import {connect} from 'react-redux';
 import {editDeck} from '../../actions/index'
 import {deleteDeck} from '../../actions/index'

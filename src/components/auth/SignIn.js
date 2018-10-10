@@ -10,7 +10,7 @@ export class SignIn extends React.Component {
   onSubmit(values) {
     return this.props.dispatch(login(values.username, values.password))
       .then(() => this.props.history.push('/dashboard'));
-      // .catch(() => alert('login failed'));
+
   }
 
   render() {
@@ -40,7 +40,6 @@ export class SignIn extends React.Component {
                placeholder="Username"
                aria-label="username"
             />
-            {/* <label htmlFor="username">User Name</label> */}
             <Field
               className="sign-in-up-input"
               type="password"
@@ -50,7 +49,6 @@ export class SignIn extends React.Component {
               placeholder="Password"
                aria-label="password"
             />
-            {/* <label htmlFor="password">Password</label> */}
             <button
               type="submit"
               disabled={this.props.pristine || this.props.submitting}
