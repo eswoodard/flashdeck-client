@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom';
 import SignedOutLinks from './SignedOutLinks';
 import SignedInLinks from './SignedInLinks';
 import './Nav.css';
-
-
-
-
+import flashdeckLogo from '../../images/flashdeck-logo.png';
 
 export class Nav extends React.Component {
 
@@ -22,7 +19,6 @@ export class Nav extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize.bind(this));
-    // this.renderNavigation;
   }
 
   componentWillUnmount() {
@@ -74,6 +70,7 @@ export class Nav extends React.Component {
     return (
       <nav id="topNav" className="nav">
           <div className="logo">
+            <img className="logo-img" src={flashdeckLogo} alt="flashdeck logo"/>
             <Link to='/'>FlashDeck</Link>
           </div>
           {this.renderNavigation()}
@@ -81,19 +78,12 @@ export class Nav extends React.Component {
         </nav>
     )
   }
-
-
-  // console.log(props);
-
-
 }
 
 
 const mapStateToProps = state => {
-  // console.log(state);
   return {
     currentUser: state.auth.currentUser,
   }
-
 }
 export default connect(mapStateToProps)(Nav);

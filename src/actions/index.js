@@ -29,7 +29,7 @@ export const getAllDecks = () => (dispatch, getState) => {
     headers: { Authorization: "Bearer " + token }
   })
   .then((response) => {
-    // console.log(response);
+
     dispatch(getAllDecksSuccess(response.data))
   })
   .catch((err) => console.log(err))
@@ -43,14 +43,11 @@ export const getAllDecksSuccess = (decks) => ({
 
 export const GET_DECK_BY_ID = 'GET_DECK_BY_ID';
 export const getDeckById = (deckId) => (dispatch, getState) => {
-  // console.log(deckId);
- ;
   const token = getState().auth.authToken;
   axios.get(`${API_BASE_URL}/deck/${deckId}`, {
     headers: { Authorization: "Bearer " + token}
   })
   .then((response) => {
-    // console.log(response);
     dispatch(getDeckByIdSuccess(response.data))
   })
   .catch((err) => console.log(err))
@@ -64,7 +61,6 @@ export const getDeckByIdSuccess = (deck) => ({
 
 export const EDIT_DECK = 'EDIT_DECK';
 export const editDeck = (deck) => (dispatch, getState) => {
-  // console.log(deck);
   const deckId = deck._id;
   const token = getState().auth.authToken;
   axios.put(`${API_BASE_URL}/deck/${deckId}`, deck, {

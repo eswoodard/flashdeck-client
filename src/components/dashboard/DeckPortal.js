@@ -4,10 +4,8 @@ import {withRouter} from 'react-router-dom';
 
 
 const DeckPortal = (props) =>  {
-  // console.log(props);
 
   return (
-
     <div className="flashdeck-summary-container">
       <p className="summary-item"> {props.deck.deckCards.length} cards</p>
       <div className="vertical"></div>
@@ -22,9 +20,6 @@ const DeckPortal = (props) =>  {
       </div>
     </div>
     )
-
-
-
 }
 
 export default (withRouter)(DeckPortal);

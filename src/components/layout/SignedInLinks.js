@@ -1,14 +1,11 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {clearAuth} from '../../actions/auth.js';
 import {clearAuthToken} from '../../local-storage';
 import {withRouter} from 'react-router-dom';
 
-
-
 const SignedInLinks = (props) =>  {
-    // console.log("dashboard", props)
     return (
         <ul className="nav-links right hide-on-med-and-down" id="nav-mobile">
             <li className="links" onClick={props.onClick}><NavLink to='/create-deck'>+Create Deck</NavLink></li>
@@ -24,7 +21,6 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(clearAuth());
             clearAuthToken();
         },
-
     }
 }
 

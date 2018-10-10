@@ -1,7 +1,5 @@
 import React from 'react';
-import {Field, FieldArray, reduxForm} from 'redux-form';
-import Input from '../input/input';
-import {required, nonEmpty} from '../input/validators';
+import {Field} from 'redux-form';
 import Textarea from '../input/textarea';
 
 
@@ -34,8 +32,6 @@ const DeckFormInputs = ({ fields }) => (
           onClick={() => fields.remove(index)}
         >
         <i className="fas fa-trash"></i>
-        {/* <i className="material-icons">
-        delete</i> */}
         </button>
       </div>
     ))}

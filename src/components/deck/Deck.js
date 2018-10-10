@@ -1,7 +1,6 @@
 import React from 'react';
 import './Deck.css';
 import Card from './Card';
-import DeckNavigation from './DeckNavigation';
 import CardList from './CardList';
 import {connect} from 'react-redux';
 import {getDeckById} from '../../actions/index';
@@ -23,7 +22,6 @@ export class Deck extends React.Component  {
   }
 
   render() {
-    // console.log(this.props);
 
     var sliderSettings = {
       dots: true,
@@ -51,7 +49,7 @@ export class Deck extends React.Component  {
         <div className="study-deck">
           <h2>{this.props.currentDeck.deckTitle}</h2>
               <header>
-                <p>{this.props.currentDeck.deckCards.length} cards in deck</p>
+                <p>{this.props.currentDeck.deckCards.length} Cards in this deck</p>
               </header>
               <p className="instructions">Click card to flip it.</p>
         </div>
@@ -74,7 +72,6 @@ export class Deck extends React.Component  {
               </div>
         </div>
             {this.state.checked ? null : <div>{cardList}</div>}
-            {/* {cardList} */}
             <div className="quiz-button-container">
               {console.log(this.props)}
               {this.props.currentDeck.deckAuthor !== this.props.currentUser.id ? null :
