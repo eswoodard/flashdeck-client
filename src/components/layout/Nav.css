@@ -1,8 +1,8 @@
 nav {
   background-color: #f5f5f5;
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
   padding-left: 20px;
   padding-right: 20px;
   position: fixed;
@@ -31,16 +31,32 @@ nav {
 .links {
   padding: 20px;
   list-style: none;
-  color: black;
   font-size: 15px;
+  float: right;
+  padding-right: 30px;
 }
 
 .nav-links {
-  margin-right: 20px;
+  background-color: rgba(245, 245, 245, 0.9);
+  float: right;
+  width: 200px;
+  margin-top: 0px;
+  border: 2px solid rgba(245, 245, 245, 1.0);
+}
+
+.links a:hover {
+  background-color: red;
 }
 
 .fa-bars {
   border: none;
+  position: absolute;
+  top: 22px;
+  right: 30px;
+}
+
+.resLinks-wide {
+  display: none;
 }
 
 @media (min-width: 540px){
@@ -50,24 +66,38 @@ nav {
   }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
+
+  .fa-bars, .resLinks {
+    display: none;
+  }
+
+  .resLinks-wide {
+    display: block;
+  }
+
+  .nav-links {
+    margin-bottom: 0px;
+    /* margin-right: 8%; */
+    width: unset;
+  }
+
+  .links {
+    float: unset;
+    display: inline;
+    padding: 15px;
+
+  }
 
   nav {
-    font-size: 22px;
-    height: 80px;
-  }
-  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 20px;
   }
 
 }
 
-@media (min-width: 960px) {
-
-  .nav-links {
-    display: flex;
-  }
-}
 
 @media (min-width: 1500px) {
 

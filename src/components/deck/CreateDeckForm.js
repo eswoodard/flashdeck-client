@@ -43,9 +43,8 @@ export class CreateDeckForm extends React.Component {
           Create Deck
           </button>
           <button
-            type="submit"
             className="create-card-btn delete"
-            onSubmit={()=>this.props.history.push('/dashboard')}
+            onClick={()=>this.props.history.push('/dashboard')}
             >
             Cancel
           </button>

@@ -21,13 +21,11 @@ export class Dashboard extends React.Component {
     })
 
     const memberDecks = this.props.decks.filter((deck) => deck.deckAuthor.username !== this.props.currentUser.username);
-    console.log(memberDecks);
     const memberDeckPortals = memberDecks.map((deck, index) => {
       return (
         <DeckPortal deck={deck} dispatch={this.props.dispatch} key={index}/>
       )
     })
-    console.log(memberDeckPortals);
 
     return (
       <div className="flashdecks">

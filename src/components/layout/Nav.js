@@ -9,73 +9,53 @@ import flashdeckLogo from '../../images/flashdeck-logo.png';
 export class Nav extends React.Component {
 
   state = {
-    widowWidth: window.innerWidth,
-    mobileNavVisible: false,
+    mobileNavOpen: false,
   }
 
-  handleResize() {
-    this.setState({windowWidth: window.innerWidth});
-  }
-
-  componentDidMount() {
-    window.addEventListener('resize', this.handleResize.bind(this));
+  componentWillMount() {
+    document.addEventListener('mousedown', this.handleClickOutside, false);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize.bind(this));
+    document.removeEventListener('mousedown', this.handleClickOutside, false);
   }
 
-  navigationLinks() {
-    return (
-      <div className="resLinks">
-        {this.props.currentUser ?
-          <SignedInLinks onClick={this.handleNavClick} />
-          : <SignedOutLinks onClick={this.handleNavClick}/>
-          }
-     </div>
-    )
-  }
-
-  renderMobileNav() {
-    if(this.state.mobileNavVisible) {
-      return this.navigationLinks();
+  handleClickOutside = (e) => {
+    if(this.node.contains(e.target)) {
+      return;
     }
+    this.setState({mobileNavOpen: false});
   }
 
-  handleNavClick =() => {
-    if(!this.state.mobileNavVisible) {
-      this.setState({mobileNavVisible: true});
-    } else {
-      this.setState({mobileNavVisible: false});
-    }
+  toggleMobileNav = () =>  {
+    this.setState( (prevState) => {
+      return {mobileNavOpen: !prevState.mobileNavOpen}
+    } )
   }
 
-  renderNavigation() {
-    if(this.state.windowWidth <= 960) {
-      return (
-        <div className="mobile_nav">
-          <p onClick={this.handleNavClick}><i className="fas fa-bars"></i></p>{this.renderMobileNav()}
-        </div>
-      );
-    } else {
-      return (
-        <div className="nav_menu">
-          {this.navigationLinks()}
-        </div>
-      )
-    }
-  }
 
   render() {
     return (
-      <nav id="topNav" className="nav">
-          <div className="logo">
-            <img className="logo-img" src={flashdeckLogo} alt="flashdeck logo"/>
-            <Link to='/'>FlashDeck</Link>
-          </div>
-          {this.renderNavigation()}
+      <nav  id="topNav" className="nav">
+        <div className="logo">
+          <img className="logo-img" src={flashdeckLogo} alt="flashdeck logo"/>
+          <Link to='/'>FlashDeck</Link>
+        </div>
+        <div  ref={node => this.node = node} className="resLinks" style={{display: (this.state.mobileNavOpen ? 'block' : 'none')}}>
+          {this.props.currentUser ?
+            <SignedInLinks onClick={this.toggleMobileNav} />
+            : <SignedOutLinks onClick={this.toggleMobileNav}/>
+          }
+        </div>
+        <div className="resLinks-wide" >
+          {this.props.currentUser ?
+            <SignedInLinks />
+            : <SignedOutLinks />
+          }
+        </div>
 
-        </nav>
+        <i onClick = {this.toggleMobileNav} className="fas fa-bars"></i>
+      </nav>
     )
   }
 }
