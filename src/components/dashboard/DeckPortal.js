@@ -7,9 +7,9 @@ const DeckPortal = (props) =>  {
 
   return (
     <div className="flashdeck-summary-container">
-      <p className="summary-item"> {props.deck.deckCards.length} cards</p>
+      <div className="summary"><p className="summary-item"> {props.deck.deckCards.length} cards</p>
       <div className="vertical"></div>
-      <p className="summary-item">By: {props.deck.deckAuthor.username}</p>
+      <p className="summary-item">By: {props.deck.deckAuthor.username}</p></div>
 
       <div className="break"></div>
       <p className="topic">{props.deck.deckTitle}</p>

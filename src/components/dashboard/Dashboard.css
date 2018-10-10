@@ -1,7 +1,7 @@
 
 .button-container button {
-  width: 80%;
-  height: 40px;
+  width: 60%;
+  height: 30px;
   font-size: 15px;
   border: none;
   background-color: #057191;
@@ -71,6 +71,12 @@
 .summary-item {
   font-size: 15px;
   color:#4EACBD;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  min-width: 100%;
 }
 
 .topic {

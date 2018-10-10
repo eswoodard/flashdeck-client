@@ -13,11 +13,11 @@ export class Nav extends React.Component {
   }
 
   componentWillMount() {
-    document.addEventListener('mousedown', this.handleClickOutside, false);
+    window.addEventListener('mousedown', this.handleClickOutside, false);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside, false);
+    window.removeEventListener('mousedown', this.handleClickOutside, false);
   }
 
   handleClickOutside = (e) => {
