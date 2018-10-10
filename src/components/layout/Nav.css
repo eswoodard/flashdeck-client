@@ -18,6 +18,15 @@ nav {
   text-decoration: none;
 }
 
+.logo-img {
+  height: 60px;
+  filter:saturate(#057191);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
 
 .links {
   padding: 20px;

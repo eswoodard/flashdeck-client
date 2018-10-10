@@ -51,7 +51,7 @@ export class Deck extends React.Component  {
         <div className="study-deck">
           <h2>{this.props.currentDeck.deckTitle}</h2>
               <header>
-                <p>{this.props.currentDeck.deckCards.length} cards in deck</p>
+                <p>{this.props.currentDeck.deckCards.length} Cards in this deck</p>
               </header>
               <p className="instructions">Click card to flip it.</p>
         </div>

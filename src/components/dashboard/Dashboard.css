@@ -1,22 +1,42 @@
+/* .flashdecks {
+  background: url(../../images/chalk-lightbulb.jpg);
+  background-position: 50%, 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
 .button-container button {
   /* margin-top: 75px; */
   /* padding-top: 20px; */
-  width: 50%;
+  width: 80%;
   height: 40px;
   font-size: 15px;
   border: none;
-  background-color: #E5E4E5;
+  background-color: #057191;
+  color: #f5f5f5;
+  font-family: 'Proza Libre', sans-serif;
   /* padding-bottom: 20px; */
-  /* margin-bottom: 20px; */
+  margin-bottom: 25px;
+}
+
+.button-container button:hover{
+  background-color: #193E4A;
+  color: #f5f5f5;
 }
 
 .dashboard-btn {
-  width: 50%;
+  width: 30%;
   height: 40px;
   font-size: 14px;
   margin-top: 25px;
   border: none;
-  background-color: #E5E4E5
+  background-color: #DB755C;
+  font-family: 'Proza Libre', sans-serif;
+}
+
+.dashboard-btn:hover {
+  background-color: #AB5B48;
+  color: #f5f5f5
 }
 
 .hr1 {
@@ -62,10 +82,12 @@
 
 .summary-item {
   font-size: 15px;
+  color:#4EACBD;
 }
 
 .topic {
   font-size: 18px;
+  font-family: 'Proza Libre', sans-serif;
 }
 
 .container {
@@ -91,7 +113,8 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-start;
-  background-color:#E5E4E5;
+  background-color:#fdfdfd;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding-right: 25px;
   padding-left: 25px;
   padding-top: 5px;
@@ -104,7 +127,7 @@
 
 .user-flashdecks h2  {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 80px;
   font-size: 18px;
 }
 
@@ -121,6 +144,7 @@
   width: 100%;
   justify-content: space-evenly;
   align-items: center;
+
 }
 
 .dashboard-btn-container {
@@ -155,13 +179,13 @@
   }
 
   .user-flashdecks h2, .other-flashdecks h2 {
-    padding-top: 30px;
     font-size: 30px;
   }
 
   .button-container button {
     height: 55px;
     font-size: 20px;
+    margin-bottom: 0;
   }
 
   .hr1 {

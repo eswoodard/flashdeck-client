@@ -41,7 +41,7 @@ i {
 
 .study-deck h2 {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 100px;
   font-size: 20px;
 }
 
@@ -53,6 +53,8 @@ i {
 
 header p {
   font-size: 18px;
+  color: #DB755C;
+  font-family: 'Proza Libre', sans-serif;
 }
 
 .instructions {
@@ -71,7 +73,7 @@ header p {
   overflow: scroll;
   padding-left: 30px;
   padding-right: 30px;
-  border: black solid 2px;
+  box-shadow: 3px -4px 18px 0 rgba(0,0,0,0.2);
   margin: 30px;
   width: 70%;
   height: 150px;
@@ -81,7 +83,8 @@ header p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #BFBEBF;
+  background-color: #fdfdfd;
+  font-family: 'Proza Libre', sans-serif;
 
 }
 
@@ -144,6 +147,8 @@ header p {
   /* margin-left: 20px; */
   text-align: center;
   margin-bottom: 20px;
+  font-family: 'Proza Libre', sans-serif;
+  color: #DB755C;
 }
 
 .terms-container {
@@ -160,7 +165,7 @@ header p {
 }
 
 .deck-card {
-  background-color: #BFBEBF;
+  background-color: #fdfdfd;
   margin-right: 10%;
   margin-left: 10%;
   margin-bottom: 20px;
@@ -168,6 +173,9 @@ header p {
   flex-direction: column;
   padding-left: 15px;
   padding-right: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  font-family: 'Proza Libre', sans-serif;
+
 }
 
 .deck-card p {
@@ -189,8 +197,14 @@ header p {
   margin-top: 10px;
   margin-bottom: 30px;
   border: none;
-  background-color: #E5E4E5
+  background-color: #1093B3;
+  color: #f5f5f5;
+  font-family: 'Proza Libre', sans-serif;
 
+}
+
+.edit-btn:hover {
+  background-color: #0681A8;
 }
 
 .button-container {
@@ -207,7 +221,7 @@ header p {
 }
 
 .slick-prev:before, .slick-next:before {
-  color:grey;
+  color:#1093B3;
   font-size: 30px;
 }
 
@@ -235,7 +249,6 @@ header p {
   }
 
   .slick-prev:before, .slick-next:before {
-    color:grey;
     font-size: 40px;
   }
 
@@ -259,7 +272,7 @@ header p {
   }
 
   header p {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .instructions {
@@ -309,7 +322,6 @@ header p {
     flex-direction: row;
     /* justify-content: space-around; */
     align-items: center;
-    background-color: #BFBEBF;
     margin-right: 15%;
     margin-left: 15%;
 

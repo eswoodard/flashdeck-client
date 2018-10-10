@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import SignedOutLinks from './SignedOutLinks';
 import SignedInLinks from './SignedInLinks';
 import './Nav.css';
+import flashdeckLogo from '../../images/flashdeck-logo.png';
 
 
 
@@ -74,6 +75,7 @@ export class Nav extends React.Component {
     return (
       <nav id="topNav" className="nav">
           <div className="logo">
+            <img className="logo-img" src={flashdeckLogo} alt="flashdeck logo"/>
             <Link to='/'>FlashDeck</Link>
           </div>
           {this.renderNavigation()}
