@@ -15,18 +15,25 @@ Password: password10
 
 ## Technologies Used
 React + Redux, Javascript, CSS, HMTL/JSX
+
 Backend code can be found at [](https://github.com/eswoodard/flashdeck-api).  Backend technologies include:  Node.js, Express.js, Mongodb, Mongoose, JWT, Passport, Mocha, Chai, REST APIs
 
 ## Future Enhancements
+
 **Version 2.0**
+
   *Add ability for users to search for decks by topic
   *Add pagination for deck loading
   *Add ability for users to star cards for additional study, and filter decks to see either all cards or only starred cards
   *Add ability for users to mark decks as private so that they cannot be viewed by other users
- **Version 3.0**
+  
+**Version 3.0**
+ 
   *Add quiz feature that will allow users to take a quiz based on their FlashDecks
   *Track quiz scores so that users can see progress over time
-  **Version 4.0**
+  
+**Version 4.0**
+  
    *Add multiple games (match game, etc) to provider multiple paths to learning
    *Add ability for users to star or rate FlashDecks created by other users
 
