@@ -14,6 +14,11 @@ Username: DemoUser
 Password: password10
 
 ## Screenshots
+![](public/images/screenshots/FD-landing-page.png)
+![](public/images/screenshots/FD-Dashboard.png)
+![](public/images/screenshots/FD-study-page.png)
+![](public/images/screenshots/FD-create-deck-page.png)
+
 
 ## Technologies Used
 React + Redux, Javascript, CSS, HMTL/JSX
