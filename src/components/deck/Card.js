@@ -3,7 +3,7 @@ import ReactCardFlip from 'react-card-flip';
 import {connect} from 'react-redux';
 
 
-export class Card  extends React.Component  {
+export class Card extends React.Component  {
 
   state = {
     isFlipped: false,
@@ -18,22 +18,22 @@ export class Card  extends React.Component  {
 
   render() {
     return (
-      <div className="card-container">
-        <div className="card">
-          <ReactCardFlip isFlipped={this.state.isFlipped} flipSpeedBackToFront={this.state.flipSpeed} flipSpeedFrontToBack={this.state.flipSpeed} infinite={this.state.infinite}>
-            <div className="card-front side" key="front" onClick={this.handleClick}>
-              {/* <div className="icon-container">
-              <i className="material-icons icon">star_border
-              </i>
-              </div> */}
-                <p>{this.props.term}</p>
+        <div className="card-container">
+          <div className="card">
+            <ReactCardFlip isFlipped={this.state.isFlipped} flipSpeedBackToFront={this.state.flipSpeed} flipSpeedFrontToBack={this.state.flipSpeed} infinite={this.state.infinite}>
+              <div className="card-front side" key="front" onClick={this.handleClick}>
+                {/* <div className="icon-container">
+                <i className="material-icons icon">star_border
+                </i>
+                </div> */}
+                  <p>{this.props.term}</p>
+              </div>
+              <div className="card-back side" key="back" onClick={this.handleClick}>
+                <p>{this.props.definition}</p>
+              </div>
+            </ReactCardFlip>
             </div>
-            <div className="card-back side" key="back" onClick={this.handleClick}>
-              <p>{this.props.definition}</p>
-            </div>
-          </ReactCardFlip>
-          </div>
-      </div>
+        </div>
     )
   }
 }

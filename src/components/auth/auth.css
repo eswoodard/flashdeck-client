@@ -64,6 +64,10 @@
   background-color: #AD5D49;
 }
 
+.sign-in button:focus, .signup-form button:focus {
+  background-color: #AD5D49;
+}
+
 .sign-in p, .signup-form p {
   font-size: 10px;
   text-align: center;

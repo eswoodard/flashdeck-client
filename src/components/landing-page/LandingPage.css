@@ -72,10 +72,18 @@
 
 .lp-btn2:hover {
   background-color: #AD5D49;
+}
 
+.lp-btn2:focus {
+  background-color: #AD5D49;
 }
 
 .lp-btn:hover {
+  background-color:#05708D;
+  color: #f5f5f5;
+}
+
+.lp-btn:focus {
   background-color:#05708D;
   color: #f5f5f5;
 }

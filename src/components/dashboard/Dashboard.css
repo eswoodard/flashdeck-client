@@ -14,6 +14,10 @@
   background-color: #05708D;
 }
 
+.button-container button:focus{
+  background-color: #05708D;
+}
+
 .dashboard-btn {
   width: 30%;
   height: 40px;
@@ -27,7 +31,10 @@
 
 .dashboard-btn:hover {
   background-color: #AD5D49;
+}
 
+.dashboard-btn:focus {
+  background-color: #AD5D49;
 }
 
 .hr1 {

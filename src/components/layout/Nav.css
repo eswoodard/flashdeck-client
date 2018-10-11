@@ -45,6 +45,10 @@ nav {
   color: #068AAD;
 }
 
+.links a:focus {
+  color: #068AAD;
+}
+
 .fa-bars {
   border: none;
   position: absolute;

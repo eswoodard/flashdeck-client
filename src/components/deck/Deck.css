@@ -197,6 +197,10 @@ header p {
   background-color: #05708D;
 }
 
+.edit-btn:focus {
+  background-color: #05708D;
+}
+
 .button-container {
   text-align: center;
 }
@@ -227,7 +231,7 @@ header p {
 @media(min-width: 540px) {
 
   .card-container, .card-front, .card-back {
-    height: 200px;
+    height: 300px;
   }
 }
 
@@ -273,8 +277,12 @@ header p {
     font-size: 22px;
   }
 
-  .card-front, .card-back, .card-container {
+  .card-front, .card-back {
     height: 400px;
+    }
+
+    .card-container {
+      height: 415px;
     }
 
   .card-front p{
@@ -328,10 +336,6 @@ header p {
   margin-left: 15px;
   margin-right: 15px;
   align-self: unset;
-  }
-
-  .card-container {
-    height: 400px
   }
 
   .card {

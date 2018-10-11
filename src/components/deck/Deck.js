@@ -21,6 +21,7 @@ export class Deck extends React.Component  {
     this.props.dispatch(getDeckById(this.props.match.params.id));
   }
 
+
   render() {
 
     var sliderSettings = {
@@ -38,7 +39,7 @@ export class Deck extends React.Component  {
       return null;
     } else  {
       const cards = this.props.currentDeck.deckCards.map((card, index) =>
-        <Card term={card.cardTerm} definition={card.cardDefinition} key={index} />
+        <Card term={card.cardTerm} definition={card.cardDefinition} key={index} onRef={ref=> (this.child = ref)}/>
       );
       const cardList = this.props.currentDeck.deckCards.map((card, index) =>
         <CardList term={card.cardTerm} definition={card.cardDefinition} key={index} number={index}/>
@@ -61,6 +62,7 @@ export class Deck extends React.Component  {
                 <p>{this.props.currentDeck.deckCards.length} Cards in this deck</p>
               </header>
               <p className="instructions">Click card to flip it.</p>
+
         </div>
         <Slider {...sliderSettings}>
           {cards}
