@@ -14,9 +14,16 @@ Username: DemoUser
 Password: password10
 
 ## Screenshots
+**Landing Page**
 ![](public/images/screenshots/FD-landing-page.png)
+
+**Dashboard**
 ![](public/images/screenshots/FD-Dashboard.png)
+
+**Study Deck Page**
 ![](public/images/screenshots/FD-study-page.png)
+
+**Create Deck Page**
 ![](public/images/screenshots/FD-create-deck-page.png)
 
 
