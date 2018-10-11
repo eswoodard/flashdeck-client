@@ -53,16 +53,16 @@ export class EditDeckForm extends React.Component {
             }>
           Submit Changes
           </button>
-       </div>
-      </form>
-      <div className="form-submit-btn-container">
-        <button
-          type="submit"
+          <button
           onClick= { () => this.onClick()}
           className="create-card-btn delete"
           >
           Delete Deck
         </button>
+       </div>
+      </form>
+      <div className="form-submit-btn-container">
+
       </div>
       </div>
 

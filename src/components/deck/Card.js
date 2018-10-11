@@ -7,7 +7,7 @@ export class Card  extends React.Component  {
 
   state = {
     isFlipped: false,
-    flipSpeed: 0.2,
+    flipSpeed: 0.4,
     infinite: false,
   };
 

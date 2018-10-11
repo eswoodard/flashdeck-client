@@ -60,6 +60,10 @@
   color: #f5f5f5;
 }
 
+.sign-in button:hover, .signup-form button:hover {
+  background-color: #AD5D49;
+}
+
 .sign-in p, .signup-form p {
   font-size: 10px;
   text-align: center;

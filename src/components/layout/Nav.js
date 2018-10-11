@@ -49,12 +49,12 @@ export class Nav extends React.Component {
         </div>
         <div className="resLinks-wide" >
           {this.props.currentUser ?
-            <SignedInLinks />
+            <SignedInLinks onClick={() => null} />
             : <SignedOutLinks />
           }
         </div>
 
-        <i onClick = {this.toggleMobileNav} className="fas fa-bars"></i>
+        <i onClick = {this.toggleMobileNav}  className="fas fa-bars"></i>
       </nav>
     )
   }

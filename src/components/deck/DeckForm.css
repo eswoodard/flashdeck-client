@@ -12,7 +12,7 @@
 .form-input {
   width: 90%;
   border: none;
-  border-bottom: 3px solid #0681A8;
+  border-bottom: 3px solid #068AAD;
   font-size: 16px;
   margin-bottom: 15px;
 }
@@ -120,7 +120,7 @@ p {
 }
 
 .create-card-btn:hover {
-  background-color: #AB5B48;
+  background-color: #AD5D49;
 }
 
 .form-submit-btn-container {
@@ -133,12 +133,12 @@ p {
 .delete {
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color:#4EACBD;
-  color: black;
+  background-color:#068AAD;
+  color: #f5f5f5;
 }
 
 .delete:hover {
-  background-color: #057599;
+  background-color: #05708D;
   color: #f5f5f5;
 
 }
@@ -200,6 +200,10 @@ p {
     width: 200px;;
     font-size: 20px;
     float: right;
+  }
+
+  .form-submit-btn-container {
+    align-items: flex-end;
   }
 
 }
