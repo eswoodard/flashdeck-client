@@ -30,7 +30,7 @@ export class Deck extends React.Component  {
       slidesToShow: 1,
       slidesToScroll: 1,
       swipe: true,
-      // lazyLoad: true,
+      lazyLoad: true,
       accessibility: true
     };
 

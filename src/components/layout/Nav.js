@@ -33,6 +33,9 @@ export class Nav extends React.Component {
     } )
   }
 
+  handleClick = () => {
+    console.log('clicked');
+  }
 
   render() {
     return (
@@ -49,7 +52,7 @@ export class Nav extends React.Component {
         </div>
         <div className="resLinks-wide" >
           {this.props.currentUser ?
-            <SignedInLinks onClick={() => null} />
+            <SignedInLinks onClick={this.handleClick} />
             : <SignedOutLinks />
           }
         </div>
