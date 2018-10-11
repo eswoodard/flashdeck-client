@@ -10,8 +10,8 @@ i {
   height: 1px;
   border: 0;
   border-top: 1px solid #7C7F7F;
-  margin-top: 75px;
-  margin-bottom: 75px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -40,7 +40,7 @@ i {
 
 .study-deck h2 {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 75px;
   font-size: 20px;
 }
 
@@ -85,6 +85,7 @@ header p {
   background-color: #fdfdfd;
   font-family: 'Proza Libre', sans-serif;
 
+
 }
 
 .icon-container {
@@ -105,6 +106,7 @@ header p {
 
 .card-back p {
   font-size: 15px;
+  max-height: 85%;
 }
 
 .count {
@@ -202,6 +204,10 @@ header p {
   text-align: center;
 }
 
+.slick-arrow {
+  display: none;
+}
+
 .slick-prev {
   left: 3%;
   z-index: 1;
@@ -221,8 +227,22 @@ header p {
   position: absolute;
 }
 
+@media(min-width: 540px) {
+
+  .card-container, .card-front, .card-back {
+    height: 200px;
+  }
+
+
+
+}
 
 @media (min-width: 768px) {
+
+  .hr1 {
+    margin-top: 75px;
+    margin-bottom: 75px;
+  }
 
   .label {
     display: none;
@@ -259,7 +279,7 @@ header p {
     font-size: 22px;
   }
 
-  .card-front, .card-back {
+  .card-front, .card-back, .card-container {
     height: 400px;
     }
 
@@ -270,6 +290,7 @@ header p {
   .card-back p {
     font-size: 24px;
     text-align: center;
+    max-height: 90%;
   }
 
   .count, .quiz-button-container p {

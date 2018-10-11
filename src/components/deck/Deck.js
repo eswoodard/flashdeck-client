@@ -29,8 +29,8 @@ export class Deck extends React.Component  {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      swipeToSlide: true,
-      lazyLoad: true,
+      swipe: true,
+      // lazyLoad: true,
       accessibility: true
     };
 
