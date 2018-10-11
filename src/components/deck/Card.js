@@ -26,9 +26,7 @@ export class Card  extends React.Component  {
               <i className="material-icons icon">star_border
               </i>
               </div> */}
-              {/* <div className="card-term"> */}
                 <p>{this.props.term}</p>
-              {/* </div> */}
             </div>
             <div className="card-back side" key="back" onClick={this.handleClick}>
               <p>{this.props.definition}</p>

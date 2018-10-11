@@ -67,7 +67,6 @@ header p {
   height: 150px;
 }
 
-
 .card-back, .card-front {
   overflow: scroll;
   padding-left: 30px;
@@ -84,8 +83,6 @@ header p {
   justify-content: center;
   background-color: #fdfdfd;
   font-family: 'Proza Libre', sans-serif;
-
-
 }
 
 .icon-container {

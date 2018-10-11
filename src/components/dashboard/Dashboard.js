@@ -54,7 +54,6 @@ export class Dashboard extends React.Component {
   }
 }
 
-
 const mapStateToProps = state => ({
   decks: state.flashDecks.decks,
   currentUser: state.auth.currentUser

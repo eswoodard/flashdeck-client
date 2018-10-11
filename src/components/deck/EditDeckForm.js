@@ -8,8 +8,6 @@ import {connect} from 'react-redux';
 import {editDeck} from '../../actions/index'
 import {deleteDeck} from '../../actions/index'
 
-
-
 export class EditDeckForm extends React.Component {
 
   onSubmit(values) {
@@ -40,32 +38,28 @@ export class EditDeckForm extends React.Component {
               arialabel="Deck Title"
               />
               <br></br>
-        </div>
-        <FieldArray name="deckCards" component={DeckFormInputs} />
-        <div className="deck-item">
-        </div>
-       <div className="form-submit-btn-container">
-        <button
-            type="submit"
-            className="create-card-btn"
-            disabled={
-              this.props.pristine || this.props.submitting
-            }>
-          Submit Changes
-          </button>
-          <button
-          onClick= { () => this.onClick()}
-          className="create-card-btn delete"
-          >
-          Delete Deck
-        </button>
-       </div>
-      </form>
-      <div className="form-submit-btn-container">
-
+          </div>
+          <FieldArray name="deckCards" component={DeckFormInputs} />
+          <div className="deck-item"></div>
+          <div className="form-submit-btn-container">
+            <button
+                type="submit"
+                className="create-card-btn"
+                disabled={
+                  this.props.pristine || this.props.submitting
+                }>
+              Submit Changes
+              </button>
+              <button
+              onClick= { () => this.onClick()}
+              className="create-card-btn delete"
+              >
+              Delete Deck
+            </button>
+          </div>
+        </form>
+        <div className="form-submit-btn-container"></div>
       </div>
-      </div>
-
     )
   }
 }

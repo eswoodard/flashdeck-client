@@ -29,7 +29,6 @@ export const flashDeckReducer = (state=initialState, action) => {
       });
   }
   else if(action.type === actions.EDIT_DECK_SUCCESS) {
-    console.log(action.decks);
     console.log('deck successfully edited');
     return Object.assign({}, state, {
       decks: [
