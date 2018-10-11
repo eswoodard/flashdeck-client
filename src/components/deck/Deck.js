@@ -44,6 +44,15 @@ export class Deck extends React.Component  {
         <CardList term={card.cardTerm} definition={card.cardDefinition} key={index} number={index}/>
     );
 
+    let button;
+    if (!this.props.currentUser){
+      return null;
+    } else {
+        button = this.props.currentDeck.deckAuthor !== this.props.currentUser.id ? null :
+        <button className="edit-btn" onClick= { () => this.props.history.push('/edit-deck')}>Edit This Deck</button>
+    }
+
+
     return (
       <div className="deck-container">
         <div className="study-deck">
@@ -74,10 +83,11 @@ export class Deck extends React.Component  {
             {this.state.checked ? null : <div>{cardList}</div>}
             <div className="quiz-button-container">
               {console.log(this.props)}
-              {this.props.currentDeck.deckAuthor !== this.props.currentUser.id ? null :
-                  <button className="edit-btn" onClick= { () => this.props.history.push('/edit-deck')}>Edit This Deck</button>
+              {button}
+              {/* {this.props.currentDeck.deckAuthor !== this.props.currentUser.id ? null :
+                  <button className="edit-btn" onClick= { () => this.props.history.push('/edit-deck')}>Edit This Deck</button> */}
               }
-                </div>
+           </div>
 
           </div>
         </div>

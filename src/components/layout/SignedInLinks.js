@@ -13,6 +13,7 @@ const SignedInLinks = (props) =>  {
         console.log(props);
         props.signOut();
         props.onClick;
+        props.history.push('/');
     }
 
     return (

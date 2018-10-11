@@ -48,7 +48,7 @@ nav {
 }
 
 .links a:hover {
-  background-color: red;
+  color: #057191;
 }
 
 .fa-bars {
@@ -90,6 +90,7 @@ nav {
     float: unset;
     display: inline;
     padding: 15px;
+    font-size: 18px;
 
   }
 

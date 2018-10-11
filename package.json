@@ -11,6 +11,7 @@
     "react": "^16.5.1",
     "react-card-flip": "^0.2.1",
     "react-dom": "^16.5.1",
+    "react-pure-lifecycle": "^3.0.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
