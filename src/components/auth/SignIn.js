@@ -54,6 +54,7 @@ export class SignIn extends React.Component {
               disabled={this.props.pristine || this.props.submitting}
               >Submit</button>
             <p>Don't have an account? <Link to='/signup'>Click Here</Link></p>
+            <p className="demo">Demo: DemoUser/password10</p>
           </form>
         </div>
       </div>

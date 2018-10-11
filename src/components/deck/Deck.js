@@ -82,11 +82,7 @@ export class Deck extends React.Component  {
         </div>
             {this.state.checked ? null : <div>{cardList}</div>}
             <div className="quiz-button-container">
-              {console.log(this.props)}
               {button}
-              {/* {this.props.currentDeck.deckAuthor !== this.props.currentUser.id ? null :
-                  <button className="edit-btn" onClick= { () => this.props.history.push('/edit-deck')}>Edit This Deck</button> */}
-              }
            </div>
 
           </div>
