@@ -13,7 +13,12 @@ export class SignIn extends React.Component {
 
   }
 
+
+
   render() {
+
+    console.log(this.props);
+
     let error;
     if (this.props.error) {
       error = (

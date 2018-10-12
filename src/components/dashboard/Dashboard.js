@@ -4,6 +4,7 @@ import './Dashboard.css';
 import DeckPortal from './DeckPortal';
 import requiresLogin from '../requires-login';
 import {getAllDecks} from '../../actions/index.js';
+import Loader from 'react-loader-spinner';
 
 
 export class Dashboard extends React.Component {
@@ -13,6 +14,21 @@ export class Dashboard extends React.Component {
   }
 
   render() {
+
+    if (this.props.loading) {
+      return (
+        <Loader
+         type="Puff"
+         color="#00BFFF"
+         height="100"
+         width="100"
+      />
+      );
+    } else {
+
+
+
+
     const userDecks = this.props.decks.filter((deck) => deck.deckAuthor.username == this.props.currentUser.username);
     const userDeckPortals = userDecks.map((deck, index) => {
       return (
@@ -53,10 +69,12 @@ export class Dashboard extends React.Component {
     )
   }
 }
+}
 
 const mapStateToProps = state => ({
   decks: state.flashDecks.decks,
-  currentUser: state.auth.currentUser
+  currentUser: state.auth.currentUser,
+  loading: state.auth.loading,
 });
 
 export default requiresLogin()(connect(mapStateToProps)(Dashboard));
