@@ -1,6 +1,7 @@
 import React from 'react';
 import {Field} from 'redux-form';
 import Textarea from '../input/textarea';
+import {required, nonEmpty} from '../input/validators';
 
 
 const DeckFormInputs = ({ fields }) => (
@@ -16,6 +17,7 @@ const DeckFormInputs = ({ fields }) => (
           className="term"
           placeholder="Term"
           arialabel={`${deckCard}.cardTerm`}
+          validate={[required, nonEmpty]}
         />
         <Field
           name={`${deckCard}.cardDefinition`}
@@ -24,6 +26,7 @@ const DeckFormInputs = ({ fields }) => (
           className="definition"
           placeholder="Definition"
           arialabel={`${deckCard}.cardDefinition`}
+          validate={[required, nonEmpty]}
         />
         <button
           className="remove-btn"

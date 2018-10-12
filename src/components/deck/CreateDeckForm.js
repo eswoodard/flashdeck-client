@@ -5,6 +5,7 @@ import DeckFormInputs from './DeckFormInputs';
 import Input from '../input/input';
 import {createDeck} from '../../actions/index'
 import requiresLogin from '../requires-login';
+import {required, nonEmpty} from '../input/validators';
 
 
 export class CreateDeckForm extends React.Component {
@@ -27,6 +28,7 @@ export class CreateDeckForm extends React.Component {
               type="text"
               placeholder="Deck Title"
               arialabel="Deck Title"
+              validate={[required, nonEmpty]}
               />
               <br></br>
         </div>

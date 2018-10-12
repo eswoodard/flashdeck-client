@@ -11,14 +11,15 @@ import CreateDeckForm from './deck/CreateDeckForm';
 import EditDeckForm from './deck/EditDeckForm';
 import Deck from './deck/Deck';
 import Quiz from './quiz/Quiz';
+import {refreshAuthToken} from '../actions/auth';
 
 
 export class App extends Component {
   componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {
-        // this.startPeriodicRefresh();
+        this.startPeriodicRefresh();
     } else if (prevProps.loggedIn && !this.props.loggedIn) {
-        // this.stopPeriodicRefresh();
+        this.stopPeriodicRefresh();
     }
   }
 
@@ -26,12 +27,12 @@ export class App extends Component {
         this.stopPeriodicRefresh();
     }
 
-    // startPeriodicRefresh() {
-    //     this.refreshInterval = setInterval(
-    //         () => this.props.dispatch(refreshAuthToken()),
-    //         60 * 60 * 1000
-    //     );
-    // }
+    startPeriodicRefresh() {
+        this.refreshInterval = setInterval(
+            () => this.props.dispatch(refreshAuthToken()),
+            60 * 60 * 1000
+        );
+    }
 
     stopPeriodicRefresh() {
         if (!this.refreshInterval) {

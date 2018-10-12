@@ -33,3 +33,9 @@ div#root {
   height: 100%;
 }
 
+@media (max-width: 540px) {
+  body {
+    width: 100%;
+  }
+
+}
