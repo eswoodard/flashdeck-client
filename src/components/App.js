@@ -47,7 +47,7 @@ export class App extends Component {
       <Router>
         <div className="app">
           <Nav />
-          <main>
+          <main role="main">
             <Route exact path='/' component={LandingPage} />
             <Route exact path='/signin' component={SignIn} />
             <Route exact path='/signup' component={SignUpPage} />
