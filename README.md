@@ -28,7 +28,7 @@ Password: password10
 
 
 ## Technologies Used
-React + Redux, Javascript, CSS, HMTL/JSX
+React + Redux, Javascript, CSS, HTML/JSX
 
 Backend code can be found [here](https://github.com/eswoodard/flashdeck-api).  Backend technologies include:  Node.js, Express.js, Mongodb, Mongoose, JWT, Passport, Mocha, Chai, REST APIs
 
