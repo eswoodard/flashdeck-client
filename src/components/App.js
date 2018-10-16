@@ -12,6 +12,7 @@ import EditDeckForm from './deck/EditDeckForm';
 import Deck from './deck/Deck';
 import Quiz from './quiz/Quiz';
 import {refreshAuthToken} from '../actions/auth';
+import { CylinderSpinLoader } from 'react-css-loaders';
 
 
 export class App extends Component {
@@ -48,6 +49,7 @@ export class App extends Component {
         <div className="app">
           <Nav />
           <main role="main">
+            <CylinderSpinLoader />
             <Route exact path='/' component={LandingPage} />
             <Route exact path='/signin' component={SignIn} />
             <Route exact path='/signup' component={SignUpPage} />
@@ -70,3 +72,4 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(App);
+

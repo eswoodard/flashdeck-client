@@ -18,6 +18,9 @@ body {
 
 main {
   background-color: #f5f5f5;
+  /* background-image: url("https://www.transparenttextures.com/patterns/paper.png"); */
+  /* background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png"); */
+  background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
   width: 95%;
   max-width: 1600px;
   margin: 0 auto;

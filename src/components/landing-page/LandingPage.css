@@ -38,6 +38,7 @@
   margin: 2%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   background-color: #f5f5f5;
+  /* background-image: url("https://www.transparenttextures.com/patterns/paper.png"); */
 }
 
 .header-text h2 {
@@ -122,8 +123,6 @@ section {
 
   .lp-section1 {
     margin: 2%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-color: #f5f5f5;
   }
 
   .middle-sections {
