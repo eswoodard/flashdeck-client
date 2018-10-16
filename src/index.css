@@ -28,6 +28,14 @@ main {
   overflow: scroll;
 }
 
+.cBWVbD{
+  margin-top: 500px;
+}
+
+.loader {
+  background-color: #f5f5f5;
+}
+
 div#root {
   height: 100%;
 }

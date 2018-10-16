@@ -58,7 +58,7 @@ export class Dashboard extends React.Component {
 const mapStateToProps = state => ({
   decks: state.flashDecks.decks,
   currentUser: state.auth.currentUser,
-  loading: state.auth.loading,
+  isLoading: state.auth.loading,
 });
 
 export default requiresLogin()(connect(mapStateToProps)(Dashboard));

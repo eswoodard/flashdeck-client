@@ -39,26 +39,29 @@ export class App extends Component {
         if (!this.refreshInterval) {
             return;
         }
-
         clearInterval(this.refreshInterval);
     }
 
   render() {
+    console.log(this.props.isLoading);
     return (
       <Router>
         <div className="app">
           <Nav />
+          {/* {this.props.isLoading ? <div className="loader"> <CylinderSpinLoader color={'#068AAD'} duration={0.9} size={20}/></div> : */}
           <main role="main">
-            <CylinderSpinLoader />
-            <Route exact path='/' component={LandingPage} />
-            <Route exact path='/signin' component={SignIn} />
-            <Route exact path='/signup' component={SignUpPage} />
-            <Route exact path='/dashboard' component={Dashboard} />
-            <Route exact path='/create-deck' component={CreateDeckForm} />
-            <Route exact path='/edit-deck' component={EditDeckForm} />
-            <Route path='/deck/:id' component={Deck} />
-            <Route path='quiz/:id' component={Quiz} />
-          </main>
+
+              <Route exact path='/' component={LandingPage} />
+
+              <Route exact path='/signin' component={SignIn} />
+              <Route exact path='/signup' component={SignUpPage} />
+              <Route exact path='/dashboard' component={Dashboard} />
+              <Route exact path='/create-deck' component={CreateDeckForm} />
+              <Route exact path='/edit-deck' component={EditDeckForm} />
+              <Route path='/deck/:id' component={Deck} />
+              <Route path='quiz/:id' component={Quiz} />
+
+          </main> }
           <Footer />
         </div>
       </Router>
@@ -69,6 +72,7 @@ export class App extends Component {
 const mapStateToProps = state => ({
   hasAuthToken: state.auth.authToken !==null,
   loggedIn: state.auth.currentUser !==null,
+  isLoading: state.auth.loading
 });
 
 export default connect(mapStateToProps)(App);
