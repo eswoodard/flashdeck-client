@@ -1,5 +1,5 @@
 # FlashDeck
-And educational application designed to allow users to create flashcard decks to help them learn and retain information.  FlashDeck is a community based app in that any flashdecks created are visible and available to all users.  This allows users to both learn from and teach each other.
+An educational application designed to allow users to create flashcard decks to help them learn and retain information.  FlashDeck is a community based app in that any flashdecks created are visible and available to all users.  This allows users to both learn from and teach each other.
 
 ## Motivation
 Learning is a life-long process.  This app was inspired by the idea of individuals coming together as a community to share knowledge with each other.
